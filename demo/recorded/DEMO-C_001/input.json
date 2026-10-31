@@ -1,0 +1,28 @@
+{
+  "passage_id": "DEMO-C:001",
+  "group_key": "DEMO-FIRM:2026Q1",
+  "license": "synthetic",
+  "source_window": {
+    "units": [
+      {
+        "sid": "S1",
+        "source_ref": "demo:c:t1:s1",
+        "speaker_role": "executive",
+        "window_role": "focus",
+        "text": "We champion innovation."
+      },
+      {
+        "sid": "S2",
+        "source_ref": "demo:c:t1:s2",
+        "speaker_role": "executive",
+        "window_role": "focus",
+        "text": "We stopped twelve pilots this year; teams must share unsuccessful results at monthly reviews."
+      }
+    ]
+  },
+  "provenance": {
+    "license": "synthetic",
+    "status": "author_constructed_passage_no_real_firm",
+    "note": "The constructed passage of Technical Appendix C. Provenance fields are never passed to any prompt."
+  }
+}

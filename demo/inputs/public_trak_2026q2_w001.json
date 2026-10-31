@@ -1,0 +1,28 @@
+{
+  "passage_id": "PUBLIC-TRAK-2026Q2:w001",
+  "group_key": "PUBLIC-TRAK:FY2026Q2",
+  "license": "public",
+  "source_window": {
+    "units": [
+      {"sid": "S1", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:1", "speaker_role": "executive", "window_role": "focus",
+       "text": "That we were able to lower our operating expenses while increasing revenue is a testament to the industry-leading revenue per employee that we maintain."},
+      {"sid": "S2", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:2", "speaker_role": "executive", "window_role": "focus",
+       "text": "Efficiency is a key selling point of what we provide to our customers."},
+      {"sid": "S3", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:3", "speaker_role": "executive", "window_role": "focus",
+       "text": "We mirror this focus on our own internal operations."},
+      {"sid": "S4", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:4", "speaker_role": "executive", "window_role": "focus",
+       "text": "Moreover, our transition to a SaaS model has reached the point where we no longer need to aggressively invest in our own infrastructure to support our scale."},
+      {"sid": "S5", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:5", "speaker_role": "executive", "window_role": "focus",
+       "text": "Incremental revenue is disproportionately falling to the bottom line, and our contribution margin continues to increase."}
+    ]
+  },
+  "provenance": {
+    "license": "public",
+    "source": "US SEC EDGAR, Form 8-K filed 2026-02-19 by ReposiTrak, Inc. (CIK 50471), Exhibit 99.2, transcript of the second quarter fiscal 2026 earnings call held 2026-02-17",
+    "accession": "0001437749-26-004737",
+    "url": "https://www.sec.gov/Archives/edgar/data/50471/000143774926004737/ex_922794.htm",
+    "speaker": "Chairman and Chief Executive Officer, prepared remarks",
+    "text_status": "five consecutive sentences, verbatim; no masking needed (no names occur)",
+    "note": "Public record; the exhibit states it was prepared by a transcription vendor and may contain errors. Provenance fields are never passed to any prompt."
+  }
+}

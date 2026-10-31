@@ -1,0 +1,37 @@
+{
+  "call": 5,
+  "output_id": "C1",
+  "template": "interpretive_critic.txt",
+  "prompt_sha256": "5ce721031d9bf94e2e03c739e8f2195d0a6d6f595ff7f648584a7cad2dc8bd92",
+  "prompt_chars": 13397,
+  "backend": "openai_compatible",
+  "backend_params": {
+    "model": "culture-qwen2.5-14b-20k",
+    "temperature": 0,
+    "seed": 12345,
+    "max_tokens": 4096,
+    "json_mode": true,
+    "base_url": "http://localhost:11434/v1"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "meta": {
+        "backend": "openai_compatible",
+        "model": "culture-qwen2.5-14b-20k",
+        "latency_s": 2.887,
+        "input_tokens": 2956,
+        "output_tokens": 161,
+        "finish_reason": "stop",
+        "system_fingerprint": "fp_ollama",
+        "cached": true
+      },
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "wall_s": 0.0,
+  "arm": "ADF",
+  "cost_usd": 0.0,
+  "cost_basis": "local inference (no marginal price; tokens and latency logged)"
+}

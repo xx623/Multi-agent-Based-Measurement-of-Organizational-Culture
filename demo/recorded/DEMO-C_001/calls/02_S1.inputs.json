@@ -1,0 +1,44 @@
+{
+  "passage_id": "DEMO-C:001",
+  "source_window": "[S1] (executive, FOCUS) We champion innovation.\n[S2] (executive, FOCUS) We stopped twelve pilots this year; teams must share unsuccessful results at monthly reviews.",
+  "reader_record": {
+    "passage_id": "DEMO-C:001",
+    "items": [
+      {
+        "id": "E1",
+        "actor": "teams",
+        "conduct": "share unsuccessful results",
+        "timing": "monthly",
+        "status": "ongoing",
+        "content_type": "routine",
+        "direction": "required",
+        "origin": "internal",
+        "scope": {
+          "type": "unit or function",
+          "target": "teams",
+          "extent": "all"
+        },
+        "qualifications": [
+          "must share"
+        ],
+        "excerpt": "teams must share unsuccessful results at monthly reviews",
+        "excerpt_sentence": "S2",
+        "excerpt_span": {
+          "sentence": "S2",
+          "start": 36,
+          "end": 92
+        }
+      }
+    ],
+    "declarations": [
+      {
+        "id": "D1",
+        "text": "We champion innovation.",
+        "sentence": "S1"
+      }
+    ],
+    "unresolved_flags": [],
+    "flag_responses": [],
+    "removed_item_ids": []
+  }
+}

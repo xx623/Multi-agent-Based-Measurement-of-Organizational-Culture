@@ -1,0 +1,339 @@
+You are the Judge. You receive the interpretation view of the evidence record,
+the codebook (six category definitions), and six independent category
+assessments. You do not receive the transcript or the declaration ledger.
+
+TASK: propose CLAIMS for this passage. A claim is one expectation, rule or
+routine assigned to one category; a category may carry several claims and a
+conduct item may support claims in more than one category. For each claim
+give: category; status (supported | partially supported | insufficient
+evidence); evidence IDs; the reported conduct; content_type; direction;
+origin; scope_type, scope_target, scope_extent; conduct status (completed |
+ongoing | planned). Categories with no claim are "insufficient evidence".
+
+RULES
+1. Every claim must cite evidence IDs from the view. Nothing else counts.
+2. Plans keep prospective status; they never support implemented practice.
+3. An episode supports a norm only if the view states a rule, routine or
+   repeated conduct. Say explicitly when you generalize from an event.
+4. Outcomes (growth, records, margins) are not conduct expectations.
+5. Copy direction, origin and scope fields from the view; do not widen them.
+6. If completeness_uncertain is true, say which claims it could affect.
+7. State the strongest objection to your own claims in one sentence.
+Output valid JSON (judgment schema).
+
+==================================================
+INPUT
+==================================================
+Passage ID: DEMO-C:001
+Judge round: 2
+(round 1 = propose claims; round 2 = reply to the critic's challenge, or reconsider
+independently when no challenge is supplied, and return the COMPLETE revised claim
+set with one objection_responses entry per objection you were given.)
+
+Interpretation view of the verified record (JSON):
+{
+  "passage_id": "DEMO-C:001",
+  "items": [
+    {
+      "id": "E1",
+      "actor": "teams",
+      "conduct": "share unsuccessful results",
+      "timing": "monthly",
+      "status": "ongoing",
+      "content_type": "routine",
+      "direction": "required",
+      "origin": "internal",
+      "scope": {
+        "type": "unit or function",
+        "target": "teams",
+        "extent": "all"
+      },
+      "qualifications": [
+        "must share"
+      ],
+      "excerpt": "teams must share unsuccessful results at monthly reviews"
+    }
+  ],
+  "unresolved": [],
+  "completeness_uncertain": false
+}
+
+Codebook (category names, definitions, indicators, non-qualifying signals,
+controlled vocabularies):
+{
+  "target": "Reported normative content in earnings-call accounts: conduct that executives describe as required, encouraged, permitted, discouraged or sanctioned inside the organization, or a routine described as standard practice for a defined set of actors. Calls cannot reveal members' shared beliefs, consensus or norm strength, and the instrument claims none.",
+  "categories": [
+    {
+      "key": "collaboration_people_focused",
+      "name": "Collaboration and people-focused",
+      "definition": "Reported expectations, rules or routines concerning: collaboration, cooperation, teamwork, supportive environment, low levels of conflict, community, communication within the organization, employee well-being, employee equity sharing and compensation, diversity, inclusion, empowerment, or talent development.",
+      "indicators": "collaboration, teamwork, cross-functional work, supportive environment, psychological safety, internal communication, information sharing, employee well-being, work-life balance, morale, compensation fairness, profit sharing, diversity and inclusion, empowerment, autonomy, voice, talent development, mentoring, learning culture, retention, engagement.",
+      "non_qualifying": "customers, markets, financial metrics, risk or compliance, or efficiency, unless linked to how people or teams operate internally."
+    },
+    {
+      "key": "customer_oriented",
+      "name": "Customer-oriented",
+      "definition": "Reported expectations, rules or routines concerning: sales orientation, customer service, listening to the customer, customer retention, customer experience, customer satisfaction, user experience, client service, being brand-driven, quality of product, quality of service, quality of solution, or taking pride in service.",
+      "indicators": "customer service, listening to customers, customer feedback loops, retention, customer experience, satisfaction scores used internally, service quality standards, product quality standards, pride in service, brand promise translated into conduct.",
+      "non_qualifying": "customer demand or market growth reported as outcomes, sales figures, pricing, or competitive positioning without reference to how employees serve customers."
+    },
+    {
+      "key": "innovation_adaptability",
+      "name": "Innovation and adaptability",
+      "definition": "Reported expectations, rules or routines concerning: innovation, creativity, technology adoption, entrepreneurship, adaptability, transformation, flexibility, agility, willingness to experiment, moving beyond tradition, disruption, being fast-moving, quick to take advantage of opportunities, resilience to change, or taking initiative.",
+      "indicators": "experimentation, pilots, learning from failure, technology adoption as practice, agility in reorganizing work, initiative taking, tolerance for risk in new ideas, speed of decision making, continuous improvement routines, intrapreneurship.",
+      "non_qualifying": "product launches, R&D spending, or \"transformation\" programs reported as outcomes or plans without reference to how employees are expected to behave."
+    },
+    {
+      "key": "integrity_risk_management",
+      "name": "Integrity and risk management",
+      "definition": "Reported expectations, rules or routines concerning: integrity, high ethical standards, honesty, transparency, accountability, doing the right thing, fair practices, being trustworthy, risk management, risk control, compliance, discipline, financial prudence, safety, or internal control.",
+      "indicators": "ethics standards, honesty, transparency with stakeholders, accountability routines, fair dealing, compliance practices (internal or externally required; record origin), risk review routines, safety routines, internal control practices, disciplined capital allocation as a conduct expectation.",
+      "non_qualifying": "regulatory events, litigation, impairments, leverage ratios or capital returns reported as outcomes without reference to internal conduct expectations."
+    },
+    {
+      "key": "performance_oriented",
+      "name": "Performance-oriented",
+      "definition": "Reported expectations, rules or routines concerning: high expectations for performance, achievement, competitiveness, results, hard work, efficiency, productivity, consistency in executing tasks, setting clear goals, following best practices, striving for operational excellence, or exceeding benchmarks.",
+      "indicators": "performance expectations set for employees, goal setting routines, accountability for targets, productivity practices, operational excellence routines, best-practice adoption, benchmarking of units or teams, incentive links to performance.",
+      "non_qualifying": "revenue growth, record earnings, margins, guidance or market share reported as outcomes; these are results, not expectations governing conduct."
+    },
+    {
+      "key": "other_reported_norms",
+      "name": "Other reported norms",
+      "definition": "Reported expectations, rules or routines concerning conduct that does not fit the five categories above. Generic culture declarations without reported conduct are NOT coded here; they are counted in the declaration ledger.",
+      "indicators": "reported rules or routines about conduct that no specific category covers, e.g. \"every manager must hold a weekly one-to-one\", when no category indicator applies.",
+      "non_qualifying": "generic references to \"our culture\" or \"cultural change\" without reported conduct (ledger); any item that fits a specific category above; any item with no normative content."
+    }
+  ],
+  "vocabularies": {
+    "status": [
+      "completed",
+      "ongoing",
+      "planned"
+    ],
+    "content_type": [
+      "expectation",
+      "rule",
+      "routine",
+      "episode"
+    ],
+    "direction": [
+      "required",
+      "encouraged",
+      "permitted",
+      "discouraged",
+      "sanctioned",
+      "unclear"
+    ],
+    "category_direction": [
+      "required",
+      "encouraged",
+      "permitted",
+      "discouraged",
+      "sanctioned",
+      "unclear",
+      "mixed",
+      "none"
+    ],
+    "origin": [
+      "internal",
+      "external",
+      "unstated"
+    ],
+    "scope_type": [
+      "organization-wide",
+      "unit or function",
+      "team or role",
+      "unspecified"
+    ],
+    "scope_extent": [
+      "one",
+      "some",
+      "all",
+      "named",
+      "unspecified"
+    ],
+    "source_states": [
+      "absent",
+      "unclear",
+      "present"
+    ],
+    "flag_types": [
+      "UNSUPPORTED_CLAIM",
+      "OMITTED_QUALIFIER",
+      "IGNORED_COUNTEREVIDENCE",
+      "SCOPE_OR_STATUS_ERROR",
+      "WEAK_EXCERPT",
+      "MISSING_ITEM"
+    ],
+    "flag_response_actions": [
+      "amended",
+      "added_item",
+      "removed_item",
+      "defended"
+    ],
+    "relevance": [
+      "none",
+      "weak",
+      "moderate",
+      "strong"
+    ],
+    "claim_status": [
+      "supported",
+      "partially supported",
+      "insufficient evidence"
+    ],
+    "critic_criteria": {
+      "a": "alternative reading under which the conduct is not a normative expectation at all (a one-off decision, an outcome, a plan)",
+      "b": "generalizes from an episode to a norm without a stated rule or routine",
+      "c": "infers shared culture from a formal rule whose adoption is unobserved",
+      "d": "relies on a plan or declaration",
+      "e": "scope_type, scope_target or scope_extent wider than the view states",
+      "f": "direction, origin or content_type misstated",
+      "g": "an unresolved source objection undercuts the claim"
+    },
+    "objection_response_actions": [
+      "accept",
+      "narrow",
+      "defend"
+    ],
+    "limitation_kinds": [
+      "SOURCE_INHERENT",
+      "RESOLVABLE",
+      "UNDETERMINED"
+    ],
+    "adjudication_actions": [
+      "accept",
+      "narrow",
+      "withhold"
+    ],
+    "output_states": [
+      "valid",
+      "abstained",
+      "invalid"
+    ]
+  },
+  "coding_rules": [
+    "Record only what the passage states; do not infer motives, rules or norms.",
+    "content_type routine only when the passage describes the conduct as standard practice for a defined set of actors; otherwise a reported past action is an episode.",
+    "Statements of values or intent with no reported conduct go to the declaration ledger, which never reaches the interpretation stage.",
+    "An episode is evidence of at most weak relevance on its own; plans and declarations never establish implemented practice.",
+    "Strategy, leadership decisions, financial results and market conditions count only when linked to internal conduct.",
+    "A requirement imposed from outside (regulation, customer) is still reported normative content; record its origin as external.",
+    "Direction, origin and scope fields are copied from the view and never widened downstream; adjudication may only accept, narrow or withhold.",
+    "Unknown or absent information stays unresolved; absence of evidence is insufficiency, not opposition.",
+    "Escalate to human review whenever a RESOLVABLE or UNDETERMINED limitation remains or completeness is uncertain."
+  ]
+}
+
+Six category assessments (JSON array), or null when this run uses the five-role
+configuration without expertise agents (then assess the view directly against the
+codebook):
+null
+
+Full masked passage and context window (supplied only in control arm B; otherwise
+withheld):
+withheld in this arm
+
+Your previous claims (JSON, round 2 only, otherwise null):
+{
+  "passage_id": "DEMO-C:001",
+  "round": 1,
+  "claims": [
+    {
+      "id": "K1",
+      "category": "Collaboration and people-focused",
+      "status": "supported",
+      "evidence_ids": [
+        "E1"
+      ],
+      "conduct": "share unsuccessful results",
+      "content_type": "routine",
+      "direction": "required",
+      "origin": "internal",
+      "scope": {
+        "type": "unit or function",
+        "target": "teams",
+        "extent": "all"
+      },
+      "conduct_status": "ongoing",
+      "generalized_from_event": false
+    }
+  ],
+  "completeness_uncertain_affects": [],
+  "strongest_objection": "The claim may be too broad if sharing unsuccessful results is not specifically about collaboration and people-focused norms.",
+  "objection_responses": []
+}
+
+Critic challenge (JSON, round 2 with exchange only, otherwise null):
+{
+  "passage_id": "DEMO-C:001",
+  "round": 1,
+  "objections": [
+    {
+      "id": "O1",
+      "claim_ref": "K1",
+      "criterion": "c",
+      "evidence_ids": [
+        "E1"
+      ],
+      "reason": "The claim infers shared culture from a formal rule whose adoption is unobserved. The view states that teams must share unsuccessful results at monthly reviews, but it does not provide evidence that this is a shared normative expectation within the organization.",
+      "narrowest_claim": "teams must share unsuccessful results at monthly reviews"
+    }
+  ],
+  "accepted_claims": [],
+  "resolved_objection_ids": []
+}
+
+==================================================
+OUTPUT FORMAT
+==================================================
+Return exactly one JSON object with this structure and no other text:
+{
+  "passage_id": "<as given>",
+  "round": 1,
+  "claims": [
+    {
+      "id": "K1",
+      "category": "Collaboration and people-focused | Customer-oriented | Innovation and adaptability | Integrity and risk management | Performance-oriented | Other reported norms",
+      "status": "supported | partially supported | insufficient evidence",
+      "evidence_ids": [
+        "E2"
+      ],
+      "conduct": "<reported conduct>",
+      "content_type": "expectation | rule | routine | episode",
+      "direction": "required | encouraged | permitted | discouraged | sanctioned | unclear",
+      "origin": "internal | external | unstated",
+      "scope": {
+        "type": "organization-wide | unit or function | team or role | unspecified",
+        "target": "<unit, team or role named, verbatim or placeholder; Not stated>",
+        "extent": "one | some | all | named | unspecified"
+      },
+      "conduct_status": "completed | ongoing | planned",
+      "generalized_from_event": false
+    }
+  ],
+  "completeness_uncertain_affects": [],
+  "strongest_objection": "<one sentence>",
+  "objection_responses": [
+    {
+      "objection_id": "O1",
+      "action": "accept | narrow | defend",
+      "evidence_ids": [
+        "E2"
+      ],
+      "reason": "<one sentence>"
+    }
+  ]
+}
+
+Field rules: claim ids are K1, K2, ...; keep ids stable across rounds (a round-2 claim you
+withdraw is simply omitted); category is one of the six codebook names exactly (never a
+status word such as "insufficient evidence"); a claim with status "insufficient evidence" may cite
+no evidence, every other claim must cite at least one evidence ID; set
+generalized_from_event true whenever all cited items are episodes;
+completeness_uncertain_affects lists the claim ids that an unresolved MISSING_ITEM
+could affect (empty when completeness_uncertain is false); in round 1
+objection_responses is an empty array; in round 2 give one entry per objection
+(action accept | narrow | defend, evidence_ids, reason).

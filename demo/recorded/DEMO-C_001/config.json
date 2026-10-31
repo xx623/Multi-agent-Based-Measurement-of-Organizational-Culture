@@ -1,0 +1,31 @@
+{
+  "passage_id": "DEMO-C:001",
+  "arms": {
+    "isolation": true,
+    "evidence_inquiry": true,
+    "interpretive_inquiry": true,
+    "label": "ADF"
+  },
+  "with_experts": false,
+  "backend": "openai_compatible",
+  "backend_params": {
+    "model": "culture-qwen2.5-14b-20k",
+    "temperature": 0,
+    "seed": 12345,
+    "max_tokens": 4096,
+    "json_mode": true,
+    "base_url": "http://localhost:11434/v1"
+  },
+  "codebook_version": "2.0",
+  "template_sha256": {
+    "reader.txt": "c4abe3b64dd0ea780acd5d9a5eccb6bdd14b12daff34eff0643510108c582e30",
+    "evidence_skeptic.txt": "587b14ebcb2044622575d3064b99dc911e34bffdcbce4a540d8c27ed21a68967",
+    "reader_selfcheck.txt": "a7db1fdfd979b0283c781f00e7d1dc2a15a07ce8cab1043a3693813f59d214e3",
+    "expertise_agent.txt": "9fbd246335a8f6141d7fae2dae8c76d0329ca12cca6a5d7e57ed0b6a0e1be148",
+    "judge.txt": "ef92f77d88ddaa47ca9ed11d1e11f044cc398d1949e6648e32cd2b4ed177d95e",
+    "interpretive_critic.txt": "294f7289da799e0721c81e1dda4f525645636ae98d1dcac589f8c0f6fc602b62",
+    "adjudicator.txt": "312d03d0b6bde1aea6790860c64296f13542eb352c342f3e3073f54fae099bfb"
+  },
+  "license": "synthetic",
+  "group_key": "DEMO-FIRM:2026Q1"
+}

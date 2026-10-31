@@ -1,0 +1,18 @@
+{
+  "passage_id": "DEMO-C:001",
+  "round": 2,
+  "objections": [
+    {
+      "id": "O1",
+      "claim_ref": "K1",
+      "criterion": "c",
+      "evidence_ids": [
+        "E1"
+      ],
+      "reason": "The claim infers shared culture from a formal rule whose adoption is unobserved. The view states that teams must share unsuccessful results at monthly reviews, but it does not provide evidence that this is a shared normative expectation within the organization.",
+      "narrowest_claim": "teams must share unsuccessful results at monthly reviews"
+    }
+  ],
+  "accepted_claims": [],
+  "resolved_objection_ids": []
+}

@@ -1,0 +1,77 @@
+{
+  "passage_id": "DEMO-C:001",
+  "measurement": {
+    "passage_id": "DEMO-C:001",
+    "categories": {
+      "Collaboration and people-focused": {
+        "relevance": "weak",
+        "direction": "required",
+        "claims": [
+          {
+            "claim_ref": "K1",
+            "relevance": "weak",
+            "conduct": "share unsuccessful results",
+            "content_type": "routine",
+            "direction": "required",
+            "origin": "internal",
+            "scope": {
+              "type": "unit or function",
+              "target": "teams",
+              "extent": "all"
+            },
+            "conduct_status": "ongoing",
+            "evidence_for": [
+              "E1"
+            ],
+            "evidence_against": [],
+            "limitations": [
+              {
+                "text": "The claim infers shared culture from a formal rule whose adoption is unobserved.",
+                "kind": "SOURCE_INHERENT"
+              }
+            ]
+          }
+        ]
+      },
+      "Customer-oriented": {
+        "relevance": "none",
+        "direction": "none",
+        "claims": []
+      },
+      "Innovation and adaptability": {
+        "relevance": "none",
+        "direction": "none",
+        "claims": []
+      },
+      "Integrity and risk management": {
+        "relevance": "none",
+        "direction": "none",
+        "claims": []
+      },
+      "Performance-oriented": {
+        "relevance": "none",
+        "direction": "none",
+        "claims": []
+      },
+      "Other reported norms": {
+        "relevance": "none",
+        "direction": "none",
+        "claims": []
+      }
+    }
+  },
+  "process": {
+    "passage_id": "DEMO-C:001",
+    "actions": [
+      {
+        "claim_ref": "K1",
+        "action": "narrow"
+      }
+    ],
+    "unresolved_objections": [
+      "O1"
+    ],
+    "escalate_to_human": false,
+    "output_state": "valid"
+  }
+}

@@ -1,0 +1,521 @@
+You are a multi-agent system analyzing a single speaker-separated component from an earnings call transcript.
+
+Your task is to assess whether the component discusses corporate culture, identify the most appropriate culture type through independent agent deliberation, assess tone, determine whether explicit causal analysis is present, verify evidence faithfulness, and produce a final integrated judgment.
+
+You must simulate the following agents in sequence:
+
+1.  Collaboration and People-Focused Agent
+2.  Customer-Oriented Agent
+3.  Innovation and Adaptability Agent
+4.  Integrity and Risk Management Agent
+5.  Performance-Oriented Agent
+6.  Miscellaneous Agent
+7.  Tone Agent
+8.  Causal Structure Agent
+9.  Evidence Verifier Agent
+10. Judge / Generator Agent
+
+==================================================
+GLOBAL RULES
+==================================================
+
+1. Treat the current component as the only evidence source.
+2. Do not use outside knowledge about the firm, industry, or event.
+3. Do not infer information that is not supported by the text.
+4. Do not request more context.
+5. If evidence is weak or ambiguous, prefer uncertainty rather than guessing.
+6. Focus on executives' discussions during earnings calls about corporate culture.
+7. Distinguish corporate culture from general discussion of strategy, leadership, performance, market conditions, customer demand, or operations unless these are explicitly linked to norms, values, behavioral patterns, or organizational ways of working.
+8. When citing evidence, quote only short phrases or snippets from the component.
+9. Each type agent (Agents 1–6) must independently state reasons FOR and reasons AGAINST its assigned type. If there are no reasons to support one side, state "No sufficient evidence" rather than leaving it blank.
+10. Output valid JSON only.
+11. For causality, only extract relations that are explicitly stated or strongly supported by the wording of the component itself. Do not convert loose association into causality.
+
+==================================================
+CORPORATE CULTURE DEFINITIONS
+==================================================
+
+A component is relevant to corporate or organizational culture if it discusses topics consistent with any of the following ideas:
+- principles and values that guide employee behavior;
+- shared beliefs, assumptions, values, or preferences that drive group behavior;
+- norms and values that are widely shared and strongly held in the organization;
+- an informal institution characterized by recurring patterns of behavior reinforced by events, people, and systems.
+
+A component is NOT culture-related if it only discusses:
+- general business strategy, market positioning, or competitive dynamics without linking to organizational norms or values;
+- financial performance, revenue, or cost metrics without linking to behavioral patterns;
+- leadership decisions or management actions described in isolation without reference to how they reflect or shape organizational norms;
+- macroeconomic conditions, customer demand trends, or industry dynamics without linking to internal behavioral patterns.
+
+==================================================
+CULTURE TYPE TAXONOMY
+==================================================
+
+Each culture type may be described positively (the organization focuses on or excels at these qualities) or negatively (the organization is deficient in or struggling with these qualities). Both framings count.
+
+1. Collaboration and People-Focused
+A culture focusing on (or deficient in): collaboration, cooperation, teamwork, supportive environment, low levels of conflict, community, communication within the organization, employee well-being, employee equity sharing and compensation, diversity, inclusion, empowerment, or talent development.
+
+2. Customer-Oriented
+A culture focusing on (or deficient in): sales orientation, customer service, listening to the customer, customer retention, customer experience, customer satisfaction, user experience, client service, being brand-driven, quality of product, quality of service, quality of solution, or taking pride in service.
+
+3. Innovation and Adaptability
+A culture focusing on (or deficient in): innovation, creativity, technology adoption, entrepreneurship, adaptability, transformation, flexibility, agility, willingness to experiment, moving beyond tradition, disruption, being fast-moving, quick to take advantage of opportunities, resilience to change, or taking initiative.
+
+4. Integrity and Risk Management
+A culture focusing on (or deficient in): integrity, high ethical standards, honesty, transparency, accountability, doing the right thing, fair practices, being trustworthy, risk management, risk control, compliance, discipline, financial prudence, safety, or internal control.
+
+5. Performance-Oriented
+A culture focusing on (or deficient in): high expectations for performance, achievement, competitiveness, results, hard work, efficiency, productivity, consistency in executing tasks, setting clear goals, following best practices, striving for operational excellence, or exceeding benchmarks.
+
+6. Miscellaneous
+A culture-related discussion that is too general, vague, or non-specific to fit the other five types. Examples: "strong culture", "weak culture", "positive culture", "negative culture", or "cultural change" mentioned without details about what kind of culture is being described.
+
+==================================================
+AGENT INSTRUCTIONS
+==================================================
+
+------------------------------
+AGENT 1: COLLABORATION AND PEOPLE-FOCUSED AGENT
+------------------------------
+
+You are the Collaboration and People-Focused specialist. Your sole task is to make the case FOR and AGAINST this culture type being present in the component. You operate independently. Do not defer to or coordinate with Agents 2–6.
+
+Keyword indicators — look for explicit or paraphrased mentions of:
+  collaboration, cooperation, teamwork, working together, cross-functional,
+  supportive environment, low levels of conflict, psychological safety,
+  community, sense of belonging, internal communication, information sharing,
+  employee well-being, work-life balance, employee satisfaction, morale,
+  employee equity, compensation fairness, profit sharing,
+  diversity, equity, inclusion, belonging,
+  empowerment, autonomy, voice, ownership,
+  talent development, mentoring, coaching, learning culture, career growth,
+  retention, employee engagement, people-first.
+
+Non-qualifying signals (argue against this type):
+  Mentions of customers, markets, financial metrics, risk/compliance, or efficiency
+  without linking back to how people or teams operate internally.
+
+Task:
+- State your reasons FOR: list specific phrases or paraphrases from the component that support this type being present. Quote directly where possible.
+- State your reasons AGAINST: list specific phrases or paraphrases from the component that argue against this type. Quote directly where possible.
+- If there are no reasons to support one side, state "No sufficient evidence" for that field.
+- Set should_assign = true only if the reasons FOR clearly outweigh the reasons AGAINST.
+
+Output fields:
+- reasons_for      (list of strings with quoted evidence, or ["No sufficient evidence"])
+- reasons_against  (list of strings with quoted evidence, or ["No sufficient evidence"])
+- should_assign    (boolean)
+- confidence       (float 0.0–1.0)
+
+------------------------------
+AGENT 2: CUSTOMER-ORIENTED AGENT
+------------------------------
+
+You are the Customer-Oriented specialist. Your sole task is to make the case FOR and AGAINST this culture type being present in the component. You operate independently. Do not defer to or coordinate with Agents 1 or 3–6.
+
+Keyword indicators — look for explicit or paraphrased mentions of:
+  customer service, customer experience, customer satisfaction, customer success,
+  customer centricity, listening to the customer, voice of the customer,
+  customer retention, customer loyalty, customer obsession,
+  user experience, client service, client relationships,
+  brand-driven, brand pride, quality of product, quality of service,
+  quality of solution, service excellence, taking pride in service,
+  sales culture, sales orientation, going above and beyond for customers.
+
+Non-qualifying signals (argue against this type):
+  Mentions of internal teamwork, risk management, innovation pipelines, or
+  performance metrics that are not framed in terms of customer outcomes.
+
+Task:
+- State your reasons FOR: list specific phrases or paraphrases from the component that support this type being present. Quote directly where possible.
+- State your reasons AGAINST: list specific phrases or paraphrases from the component that argue against this type. Quote directly where possible.
+- If there are no reasons to support one side, state "No sufficient evidence" for that field.
+- Set should_assign = true only if the reasons FOR clearly outweigh the reasons AGAINST.
+
+Output fields:
+- reasons_for      (list of strings with quoted evidence, or ["No sufficient evidence"])
+- reasons_against  (list of strings with quoted evidence, or ["No sufficient evidence"])
+- should_assign    (boolean)
+- confidence       (float 0.0–1.0)
+
+------------------------------
+AGENT 3: INNOVATION AND ADAPTABILITY AGENT
+------------------------------
+
+You are the Innovation and Adaptability specialist. Your sole task is to make the case FOR and AGAINST this culture type being present in the component. You operate independently. Do not defer to or coordinate with Agents 1–2 or 4–6.
+
+Keyword indicators — look for explicit or paraphrased mentions of:
+  innovation, innovative, innovating,
+  creativity, creative thinking, inventiveness,
+  technology adoption, digital transformation, tech-driven,
+  entrepreneurship, entrepreneurial mindset, startup mentality,
+  adaptability, adaptable, pivot, pivoting,
+  transformation, transforming, transformational change,
+  flexibility, flexible, nimble,
+  agility, agile, speed of response,
+  willingness to experiment, experimentation, test-and-learn,
+  disruption, disruptive, challenging the status quo,
+  moving beyond tradition, breaking with the past,
+  fast-moving, quick to act, seizing opportunities,
+  resilience to change, embracing change, change-ready,
+  taking initiative, proactive, forward-looking.
+
+Non-qualifying signals (argue against this type):
+  Mentions of following established processes, compliance, consistency, or
+  customer service without a link to new methods or change.
+
+Task:
+- State your reasons FOR: list specific phrases or paraphrases from the component that support this type being present. Quote directly where possible.
+- State your reasons AGAINST: list specific phrases or paraphrases from the component that argue against this type. Quote directly where possible.
+- If there are no reasons to support one side, state "No sufficient evidence" for that field.
+- Set should_assign = true only if the reasons FOR clearly outweigh the reasons AGAINST.
+
+Output fields:
+- reasons_for      (list of strings with quoted evidence, or ["No sufficient evidence"])
+- reasons_against  (list of strings with quoted evidence, or ["No sufficient evidence"])
+- should_assign    (boolean)
+- confidence       (float 0.0–1.0)
+
+------------------------------
+AGENT 4: INTEGRITY AND RISK MANAGEMENT AGENT
+------------------------------
+
+You are the Integrity and Risk Management specialist. Your sole task is to make the case FOR and AGAINST this culture type being present in the component. You operate independently. Do not defer to or coordinate with Agents 1–3 or 5–6.
+
+Keyword indicators — look for explicit or paraphrased mentions of:
+  integrity, ethical standards, ethics, moral conduct,
+  honesty, being honest, truthfulness,
+  transparency, being transparent, openness,
+  accountability, taking responsibility, owning outcomes,
+  doing the right thing, fair practices, fairness,
+  trustworthiness, being trustworthy, trust,
+  risk management, risk control, risk awareness, risk discipline,
+  compliance, regulatory compliance, following rules,
+  discipline, financial prudence, fiscal responsibility,
+  safety culture, safety-first, zero-harm,
+  internal control, governance, oversight, checks and balances,
+  whistleblowing, speaking up, ethical reporting.
+
+Non-qualifying signals (argue against this type):
+  Mentions of innovation, customer satisfaction, or performance targets that
+  are not framed in terms of ethical standards or risk considerations.
+
+Task:
+- State your reasons FOR: list specific phrases or paraphrases from the component that support this type being present. Quote directly where possible.
+- State your reasons AGAINST: list specific phrases or paraphrases from the component that argue against this type. Quote directly where possible.
+- If there are no reasons to support one side, state "No sufficient evidence" for that field.
+- Set should_assign = true only if the reasons FOR clearly outweigh the reasons AGAINST.
+
+Output fields:
+- reasons_for      (list of strings with quoted evidence, or ["No sufficient evidence"])
+- reasons_against  (list of strings with quoted evidence, or ["No sufficient evidence"])
+- should_assign    (boolean)
+- confidence       (float 0.0–1.0)
+
+------------------------------
+AGENT 5: PERFORMANCE-ORIENTED AGENT
+------------------------------
+
+You are the Performance-Oriented specialist. Your sole task is to make the case FOR and AGAINST this culture type being present in the component. You operate independently. Do not defer to or coordinate with Agents 1–4 or 6.
+
+Keyword indicators — look for explicit or paraphrased mentions of:
+  high performance, performance expectations, performance culture,
+  results-driven, results-oriented, outcomes focus,
+  achievement, achievement culture, winning,
+  competitiveness, competitive, beating benchmarks,
+  hard work, work ethic, effort, dedication,
+  efficiency, operational efficiency, doing more with less,
+  productivity, output, throughput,
+  consistency in execution, disciplined execution, flawless execution,
+  setting clear goals, goal-setting, target-setting,
+  following best practices, continuous improvement,
+  operational excellence, striving for excellence,
+  exceeding benchmarks, exceeding expectations,
+  sales growth, revenue growth, business growth as a cultural driver,
+  accountability for results, merit-based, pay for performance.
+
+Non-qualifying signals (argue against this type):
+  Mentions of innovation for its own sake, customer empathy, ethical conduct,
+  or employee well-being that are not framed in terms of performance outcomes.
+
+Task:
+- State your reasons FOR: list specific phrases or paraphrases from the component that support this type being present. Quote directly where possible.
+- State your reasons AGAINST: list specific phrases or paraphrases from the component that argue against this type. Quote directly where possible.
+- If there are no reasons to support one side, state "No sufficient evidence" for that field.
+- Set should_assign = true only if the reasons FOR clearly outweigh the reasons AGAINST.
+
+Output fields:
+- reasons_for      (list of strings with quoted evidence, or ["No sufficient evidence"])
+- reasons_against  (list of strings with quoted evidence, or ["No sufficient evidence"])
+- should_assign    (boolean)
+- confidence       (float 0.0–1.0)
+
+------------------------------
+AGENT 6: MISCELLANEOUS AGENT
+------------------------------
+
+You are the Miscellaneous specialist. Your sole task is to make the case FOR and AGAINST the Miscellaneous classification being appropriate for this component. You operate independently. Do not defer to or coordinate with Agents 1–5.
+
+Assign Miscellaneous only if:
+- The component mentions culture in generic terms without describing what kind of culture it is. Examples: "strong culture", "weak culture", "positive culture", "negative culture", "great culture", "unique culture", "cultural change" without specifying the nature of the change.
+- The component references culture broadly across multiple types with no single type clearly dominant.
+- None of the five specific types clearly fits based on keyword evidence.
+
+Do NOT assign Miscellaneous if:
+- The culture discussion is vague but clearly leans toward one specific type based on keywords.
+- The component is not about culture at all.
+
+Task:
+- State your reasons FOR: list specific phrases or paraphrases that make the component too vague or generic for any specific type. Quote directly where possible.
+- State your reasons AGAINST: list specific phrases or paraphrases that suggest a more specific type does fit. Quote directly where possible.
+- If there are no reasons to support one side, state "No sufficient evidence" for that field.
+- Set should_assign = true only if the component is genuinely culture-related but too vague or multi-type for any specific classification.
+
+Output fields:
+- reasons_for      (list of strings with quoted evidence, or ["No sufficient evidence"])
+- reasons_against  (list of strings with quoted evidence, or ["No sufficient evidence"])
+- should_assign    (boolean)
+- confidence       (float 0.0–1.0)
+
+------------------------------
+AGENT 7: TONE
+------------------------------
+
+Determine the tone of the culture-related discussion.
+
+Tone categories:
+- Positive: culture is described as beneficial, strong, improving, or value-enhancing.
+- Neutral:  culture is described in a mixed, descriptive, or non-evaluative way.
+- Negative: culture is described as problematic, deficient, risky, harmful, or value-destroying.
+
+Task:
+- Assess the emotional valence of how culture is discussed in the component.
+- Base the judgment exclusively on culture-related content. Ignore general business tone unless it is clearly and directly tied to the culture discussion.
+
+Action:
+- Quote specific phrases that signal a positive or negative orientation toward culture.
+- If both positive and negative signals appear, choose Neutral unless one clearly dominates.
+- If the tone is ambiguous or unclear, default to Neutral.
+- State your confidence level (0.0–1.0) and your reason.
+
+Output fields:
+- tone                      ("Positive", "Neutral", or "Negative")
+- tone_supporting_evidence  (list of short quoted phrases supporting this tone)
+- tone_counter_evidence     (list of short quoted phrases suggesting a different tone)
+- tone_confidence           (float 0.0–1.0)
+- tone_rationale            (one or two sentences)
+
+------------------------------
+AGENT 8: CAUSAL STRUCTURE
+------------------------------
+
+Determine whether the component contains explicit causal analysis about corporate culture, and extract the causal structure if present.
+
+You must distinguish:
+- Causes of culture: specific events, people, systems, decisions, or external factors that have shaped, changed, or will change the culture type.
+- Effects of culture: specific business outcomes, organizational consequences, or tangible impacts that the culture type has caused or will cause.
+
+Task:
+- First decide whether explicit culture-related causal reasoning is present.
+- Look for explicit causal trigger words such as: affect, cause, influence, lead to, result in, foster, drive, driven by, stem from, contribute to, enable, prevent, create, produce, generate.
+- Mere co-occurrence or sequential mention is NOT causality. There must be a directional causal claim in the text.
+
+Action for causes (raw_cause_phrases):
+- List only explicitly mentioned causes — specific people, systems, decisions, or events that shaped or changed the culture.
+- Do NOT list other corporate culture types as causes.
+- Do NOT include implicit, inferred, or indirect causes.
+
+Action for effects (raw_effect_phrases):
+- List only explicitly mentioned outcomes — specific business results, organizational impacts, or tangible consequences caused by the culture.
+- Do NOT list other corporate culture types as effects.
+- Do NOT include implicit, inferred, or indirect outcomes.
+
+Action for causal triples (raw_causal_triples):
+- Extract structured triples only when the causal direction is explicit in the text.
+- Each triple must have: entity1, relation_text, entity2.
+- entity1 OR entity2 must be the specific corporate culture being discussed (not a generic category label).
+- The other entity must be a concrete cause (person, system, event) or a concrete effect (outcome, impact) — NOT another culture type.
+- relation_text must be a clear, simple verb phrase that conveys the causal direction (e.g., "leads to", "is driven by", "fosters", "results in").
+- Do NOT produce triples where both entity1 and entity2 are culture types or culture descriptions.
+- If no valid triples can be constructed, return an empty array.
+
+Output fields:
+- has_explicit_causal_analysis  (boolean)
+- causal_supporting_evidence    (list of short quoted phrases that signal causality)
+- causal_counter_evidence       (list of short quoted phrases that argue against causality)
+- raw_cause_phrases             (list of strings, or [] if none)
+- raw_effect_phrases            (list of strings, or [] if none)
+- raw_causal_triples            (list of objects, or [])
+- causal_confidence             (float 0.0–1.0)
+- causal_rationale              (one or two sentences)
+
+Each object in raw_causal_triples must have:
+- entity1        (string)
+- relation_text  (string: a verb phrase)
+- entity2        (string)
+- explanation    (string: one sentence citing the specific words or phrases in the text that support this triple)
+
+------------------------------
+AGENT 9: EVIDENCE VERIFIER
+------------------------------
+
+Verify whether the candidate judgments from Agents 1–8 are faithfully supported by the component text.
+
+Task:
+- Do not produce new classifications. Only verify and flag faithfulness issues.
+
+Action — check all of the following:
+1. Type check: Does the winning type agent's reasons_for contain direct keyword matches or clear paraphrases from the taxonomy? Are the reasons_for quotes actually present in the component?
+2. NoCulture check: If all six type agents have should_assign = false, is it genuinely the case that no culture-related content is present?
+3. Tone check: Is the tone judgment tied to culture-specific language, not general business sentiment?
+4. Causality check:
+   a. Is there a genuine causal trigger word in the text, or is the causal claim inferred?
+   b. Are any causes or effects actually other culture types (which would be a violation)?
+   c. Do any causal triples have both entities as culture types (which would be a violation)?
+   d. Are the cause/effect phrases concrete (specific people, systems, events, outcomes) rather than vague?
+5. Flag any over-interpretation, unsupported inference, or evidence gaps.
+
+Output fields:
+- type_supported         (boolean)
+- tone_supported         (boolean)
+- causality_supported    (boolean)
+- unsupported_claims     (list of strings describing specific unsupported claims)
+- evidence_gaps          (list of strings describing missing evidence)
+- overall_faithfulness   ("High", "Medium", or "Low")
+- verifier_rationale     (one or two sentences summarizing the verification outcome)
+
+------------------------------
+AGENT 10: JUDGE / GENERATOR
+------------------------------
+
+Produce the final structured judgment by synthesizing all type agent deliberations (Agents 1–6) and verifier feedback (Agent 9).
+
+Decision rules:
+1. Review the reasons_for and reasons_against from each of Agents 1–6.
+2. If ALL six type agents have should_assign = false AND their reasons_for contain only "No sufficient evidence", set final_classification = "NoCulture" and leave all culture fields empty.
+3. If one or more type agents have should_assign = true, set final_classification = "Culture". Choose the type whose reasons_for are the most specific, keyword-grounded, and numerous. If tied, prefer the type whose quoted evidence most directly appears in the component text.
+4. If the component is culture-related but no specific type agent sets should_assign = true (e.g., only the Miscellaneous agent does), set culture_type = "Miscellaneous".
+5. Keep causal outputs only if the verifier confirms causality_supported = true. Otherwise return empty arrays.
+6. If evidence is weak, conflicting, or overall_faithfulness is "Low", set uncertainty_flag = true.
+7. Be conservative throughout.
+
+Action for identified_corporate_culture:
+- Summarize the specific corporate culture in a short phrase: one adjective + one noun (e.g., "collaborative team culture", "risk-averse compliance culture", "innovation-driven agile culture").
+- Do NOT use generic adjectives such as strong, weak, positive, negative, or good.
+- If corporate culture is not explicitly named but is clearly inferable from behavioral norms described in the text, infer it.
+- If the final_classification is "NoCulture", set identified_corporate_culture to "".
+
+Action for causal triples in the final output:
+- Only include triples that passed the verifier's causality check.
+- Each triple must have entity1, relation_text, entity2, and explanation.
+- entity1 OR entity2 must be the specific corporate culture (use the identified_corporate_culture phrase or the culture_type name).
+- The other entity must be a concrete cause or effect — NOT another culture type.
+- Do NOT produce triples where both entities are culture types.
+
+Final output fields:
+- final_classification          ("Culture" or "NoCulture")
+- identified_corporate_culture  (string: "adjective + noun" phrase, or "")
+- culture_type                  (one of the six type names, or "")
+- tone                          ("Positive", "Neutral", or "Negative", or "")
+- has_explicit_causal_analysis  (boolean)
+- raw_cause_phrases             (list of strings, or [])
+- raw_effect_phrases            (list of strings, or [])
+- raw_causal_triples            (list of objects, or [])
+- evidence_summary              (list of 1–3 short quoted phrases that best support the final judgment)
+- uncertainty_flag              (boolean)
+- final_rationale               (one or two sentences explaining the integrated decision, referencing which type agents' reasons_for were decisive)
+
+==================================================
+INPUT
+==================================================
+
+Input ID: {{input_id}}
+
+Earnings Call Component:
+{{component_text}}
+
+==================================================
+OUTPUT FORMAT
+==================================================
+
+Return JSON with exactly this top-level structure:
+
+{
+  "input_id": "{{input_id}}",
+  "collaboration_people_focused_agent": {
+    "reasons_for": ["No sufficient evidence"],
+    "reasons_against": ["No sufficient evidence"],
+    "should_assign": false,
+    "confidence": 0.0
+  },
+  "customer_oriented_agent": {
+    "reasons_for": ["No sufficient evidence"],
+    "reasons_against": ["No sufficient evidence"],
+    "should_assign": false,
+    "confidence": 0.0
+  },
+  "innovation_adaptability_agent": {
+    "reasons_for": ["No sufficient evidence"],
+    "reasons_against": ["No sufficient evidence"],
+    "should_assign": false,
+    "confidence": 0.0
+  },
+  "integrity_risk_management_agent": {
+    "reasons_for": ["No sufficient evidence"],
+    "reasons_against": ["No sufficient evidence"],
+    "should_assign": false,
+    "confidence": 0.0
+  },
+  "performance_oriented_agent": {
+    "reasons_for": ["No sufficient evidence"],
+    "reasons_against": ["No sufficient evidence"],
+    "should_assign": false,
+    "confidence": 0.0
+  },
+  "miscellaneous_agent": {
+    "reasons_for": ["No sufficient evidence"],
+    "reasons_against": ["No sufficient evidence"],
+    "should_assign": false,
+    "confidence": 0.0
+  },
+  "tone_agent": {
+    "tone": "Neutral",
+    "tone_supporting_evidence": ["", ""],
+    "tone_counter_evidence": ["", ""],
+    "tone_confidence": 0.0,
+    "tone_rationale": ""
+  },
+  "causal_structure_agent": {
+    "has_explicit_causal_analysis": false,
+    "causal_supporting_evidence": ["", ""],
+    "causal_counter_evidence": ["", ""],
+    "raw_cause_phrases": [],
+    "raw_effect_phrases": [],
+    "raw_causal_triples": [],
+    "causal_confidence": 0.0,
+    "causal_rationale": ""
+  },
+  "evidence_verifier_agent": {
+    "type_supported": true,
+    "tone_supported": true,
+    "causality_supported": true,
+    "unsupported_claims": [],
+    "evidence_gaps": [],
+    "overall_faithfulness": "High",
+    "verifier_rationale": ""
+  },
+  "judge_generator_agent": {
+    "final_classification": "Culture",
+    "identified_corporate_culture": "",
+    "culture_type": "Innovation and Adaptability",
+    "tone": "Positive",
+    "has_explicit_causal_analysis": false,
+    "raw_cause_phrases": [],
+    "raw_effect_phrases": [],
+    "raw_causal_triples": [],
+    "evidence_summary": ["", ""],
+    "uncertainty_flag": false,
+    "final_rationale": ""
+  }
+}

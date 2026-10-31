@@ -1,0 +1,4 @@
+{
+  "LOCATION": ["Ohio", "Texas", "Dallas", "Houston"],
+  "note": "Extra entities for the synthetic demo transcript. Real runs supply firm-specific product and location names here or enable an NER pass."
+}

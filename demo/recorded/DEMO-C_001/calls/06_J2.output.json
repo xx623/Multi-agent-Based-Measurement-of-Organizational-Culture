@@ -1,0 +1,37 @@
+{
+  "passage_id": "DEMO-C:001",
+  "round": 2,
+  "claims": [
+    {
+      "id": "K1",
+      "category": "Collaboration and people-focused",
+      "status": "partially supported",
+      "evidence_ids": [
+        "E1"
+      ],
+      "conduct": "share unsuccessful results",
+      "content_type": "routine",
+      "direction": "required",
+      "origin": "internal",
+      "scope": {
+        "type": "unit or function",
+        "target": "teams",
+        "extent": "all"
+      },
+      "conduct_status": "ongoing",
+      "generalized_from_event": false
+    }
+  ],
+  "completeness_uncertain_affects": [],
+  "strongest_objection": "The claim may be too broad if sharing unsuccessful results is not specifically about collaboration and people-focused norms.",
+  "objection_responses": [
+    {
+      "objection_id": "O1",
+      "action": "narrow",
+      "evidence_ids": [
+        "E1"
+      ],
+      "reason": "The claim is narrowed to reflect that sharing unsuccessful results may not be a broadly shared normative expectation but rather a specific requirement for teams."
+    }
+  ]
+}

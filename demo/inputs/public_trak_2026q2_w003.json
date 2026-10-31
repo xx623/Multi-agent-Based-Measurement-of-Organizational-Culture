@@ -1,0 +1,26 @@
+{
+  "passage_id": "PUBLIC-TRAK-2026Q2:w003",
+  "group_key": "PUBLIC-TRAK:FY2026Q2",
+  "license": "public",
+  "source_window": {
+    "units": [
+      {"sid": "S1", "source_ref": "sec:0001437749-26-004737:ex99.2:cfo:m1", "speaker_role": "executive", "window_role": "focus",
+       "text": "First, our goal was to convert all revenue streams largely to SaaS recurring revenue."},
+      {"sid": "S2", "source_ref": "sec:0001437749-26-004737:ex99.2:cfo:m2", "speaker_role": "executive", "window_role": "focus",
+       "text": "Since 2020, we have converted over $7 million in one-time revenue to recurring SaaS and increased our recurring revenue from 62% of total revenue to over 98%."},
+      {"sid": "S3", "source_ref": "sec:0001437749-26-004737:ex99.2:cfo:m3", "speaker_role": "executive", "window_role": "focus",
+       "text": "Since 2020, we have paid off over $6 million in bank debt and reduced annual operating expenses from roughly $19 million to $16 million."},
+      {"sid": "S4", "source_ref": "sec:0001437749-26-004737:ex99.2:cfo:m4", "speaker_role": "executive", "window_role": "focus",
+       "text": "Meanwhile, we have grown our net margin from 8% to north of 30% during the same period."}
+    ]
+  },
+  "provenance": {
+    "license": "public",
+    "source": "US SEC EDGAR, Form 8-K filed 2026-02-19 by ReposiTrak, Inc. (CIK 50471), Exhibit 99.2, transcript of the second quarter fiscal 2026 earnings call held 2026-02-17",
+    "accession": "0001437749-26-004737",
+    "url": "https://www.sec.gov/Archives/edgar/data/50471/000143774926004737/ex_922794.htm",
+    "speaker": "Chief Financial Officer, prepared remarks on milestones since 2020",
+    "text_status": "four verbatim sentences selected from one block of the remarks; sentences of the original block that fall between them (on the elimination of high-touch, low-margin business) are not reproduced, so the window is not a contiguous excerpt",
+    "note": "Public record. Provenance fields are never passed to any prompt."
+  }
+}

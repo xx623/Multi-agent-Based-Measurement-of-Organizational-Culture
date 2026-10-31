@@ -1,0 +1,57 @@
+{
+  "source_file": "all_agent_responses.csv",
+  "run_date": "2026-05-04",
+  "model": "gemini-2.5-flash-lite (OpenAI-compatible endpoint), temperature 0, JSON mode",
+  "design": "single prompt simulating ten agents in sequence; no information boundaries",
+  "call_level_inputs_with_parsed_output": 16,
+  "call_level_inputs_sent": 17,
+  "unparseable_outputs": 1,
+  "earnings_calls_covered": 16,
+  "screened_executive_components_covered": 27,
+  "judge_final_classification": {
+    "Culture": 16
+  },
+  "judge_culture_type": {
+    "Innovation and Adaptability": 11,
+    "Performance-Oriented": 4,
+    "Integrity and Risk Management": 1
+  },
+  "judge_tone": {
+    "Positive": 16
+  },
+  "verifier_overall_faithfulness": {
+    "Medium": 1,
+    "High": 15
+  },
+  "judge_uncertainty_flag_true": 1,
+  "judge_explicit_causal_analysis_true": 7,
+  "type_agents": {
+    "Collaboration and People-Focused": {
+      "should_assign_true": 1,
+      "mean_confidence": 0.28
+    },
+    "Customer-Oriented": {
+      "should_assign_true": 6,
+      "mean_confidence": 0.44
+    },
+    "Innovation and Adaptability": {
+      "should_assign_true": 15,
+      "mean_confidence": 0.76
+    },
+    "Integrity and Risk Management": {
+      "should_assign_true": 5,
+      "mean_confidence": 0.42
+    },
+    "Performance-Oriented": {
+      "should_assign_true": 14,
+      "mean_confidence": 0.77
+    },
+    "Miscellaneous": {
+      "should_assign_true": 0,
+      "mean_confidence": 0.07
+    }
+  },
+  "inputs_with_two_or_more_type_agents_recommending": 15,
+  "inputs_where_judge_type_equals_highest_confidence_recommendation": 7,
+  "tokens_latency_cost": "not logged by the legacy pipeline"
+}

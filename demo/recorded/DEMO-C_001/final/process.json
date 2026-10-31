@@ -1,0 +1,14 @@
+{
+  "passage_id": "DEMO-C:001",
+  "actions": [
+    {
+      "claim_ref": "K1",
+      "action": "narrow"
+    }
+  ],
+  "unresolved_objections": [
+    "O1"
+  ],
+  "escalate_to_human": false,
+  "output_state": "valid"
+}

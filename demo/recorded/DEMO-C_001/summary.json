@@ -1,0 +1,123 @@
+{
+  "passage_id": "DEMO-C:001",
+  "group_key": "DEMO-FIRM:2026Q1",
+  "license": "synthetic",
+  "arm": "ADF",
+  "with_experts": false,
+  "status": "valid",
+  "failed_call": null,
+  "errors": [],
+  "calls": 8,
+  "calls_retried": 1,
+  "validation_retries": 1,
+  "retries_by_call": {
+    "R1": 1
+  },
+  "tokens_in": 22331,
+  "tokens_out": 2034,
+  "tokens_in_accepted": 20974,
+  "tokens_out_accepted": 1822,
+  "model_latency_s": 31.4,
+  "model_latency_s_accepted": 28.3,
+  "wall_s": 0.0,
+  "cost_usd": 0.0,
+  "cost_basis": "local inference (no marginal price; tokens and latency logged)",
+  "boundary_checked_calls": 5,
+  "boundary_violations": 0,
+  "reader_initial_items": 1,
+  "reader_initial_declarations": 1,
+  "skeptic_flags": 1,
+  "skeptic_flag_types": {
+    "OMITTED_QUALIFIER": 1
+  },
+  "reader_revised_items": 1,
+  "reader_revised_declarations": 1,
+  "reader_removed_items": 0,
+  "reader_flag_responses": {
+    "defended": 1
+  },
+  "unresolved_source_flags": 0,
+  "completeness_uncertain": false,
+  "judge1_claims": 1,
+  "judge1_claim_status": {
+    "supported": 1
+  },
+  "judge1_claim_categories": {
+    "Collaboration and people-focused": 1
+  },
+  "critic1_objections": 1,
+  "critic1_criteria": {
+    "c": 1
+  },
+  "critic1_accepted": 0,
+  "judge2_claims": 1,
+  "judge2_claim_status": {
+    "partially supported": 1
+  },
+  "judge2_responses": {
+    "narrow": 1
+  },
+  "critic2_objections": 1,
+  "critic2_resolved": 0,
+  "adjudication_actions": {
+    "narrow": 1
+  },
+  "adjudication_withheld_by_j2_status": {},
+  "claims_in_measurement": 1,
+  "retained_claims": [
+    {
+      "category": "Collaboration and people-focused",
+      "claim_ref": "K1",
+      "relevance": "weak",
+      "direction": "required",
+      "content_type": "routine",
+      "origin": "internal",
+      "scope": {
+        "type": "unit or function",
+        "target": "teams",
+        "extent": "all"
+      },
+      "limitation_kinds": [
+        "SOURCE_INHERENT"
+      ]
+    }
+  ],
+  "category_summary": {
+    "Collaboration and people-focused": {
+      "relevance": "weak",
+      "direction": "required",
+      "claims": 1
+    },
+    "Customer-oriented": {
+      "relevance": "none",
+      "direction": "none",
+      "claims": 0
+    },
+    "Innovation and adaptability": {
+      "relevance": "none",
+      "direction": "none",
+      "claims": 0
+    },
+    "Integrity and risk management": {
+      "relevance": "none",
+      "direction": "none",
+      "claims": 0
+    },
+    "Performance-oriented": {
+      "relevance": "none",
+      "direction": "none",
+      "claims": 0
+    },
+    "Other reported norms": {
+      "relevance": "none",
+      "direction": "none",
+      "claims": 0
+    }
+  },
+  "limitation_kinds": {
+    "SOURCE_INHERENT": 1
+  },
+  "unresolved_objections": 1,
+  "escalate_to_human": false,
+  "abstention_reason": null
+}

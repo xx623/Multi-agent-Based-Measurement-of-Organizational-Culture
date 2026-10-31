@@ -1,0 +1,49 @@
+{
+  "pinned_model": {
+    "purpose": "open-weight model used for every prototype run in logs/ and for `make demo`",
+    "runtime": "ollama",
+    "runtime_version": "0.40.13",
+    "model_tag": "qwen2.5:14b",
+    "model_name": "Qwen2.5-14B-Instruct",
+    "quantization": "Q4_K_M (GGUF)",
+    "weights_digest_sha256": "2049f5674b1e92b4464e5729975c9689fcfbf0b0e4443ccf10b5339f370f9a54",
+    "license": "Apache-2.0",
+    "served_as": "culture-qwen2.5-14b-20k",
+    "modelfile": "config/Modelfile",
+    "context_length": 20480,
+    "base_url": "http://localhost:11434/v1",
+    "hardware_used_for_pilot": "one NVIDIA GeForce RTX 5080 (16 GB VRAM)",
+    "pinned_on": "2026-10-31",
+    "how_to_verify": "ollama show culture-qwen2.5-14b-20k --modelfile prints the FROM digest; compare with weights_digest_sha256",
+    "ollama_show": {
+      "parameters": "14.8B",
+      "quantization": "Q4_K_M",
+      "context_length": "32768",
+      "architecture": "qwen2"
+    }
+  },
+  "decoding": {
+    "temperature": 0,
+    "seed": 12345,
+    "json_mode": true,
+    "max_tokens_by_call": {
+      "R1": 3000,
+      "S1": 1500,
+      "R2": 3500,
+      "T": 1500,
+      "J1": 2500,
+      "C1": 2000,
+      "J2": 3000,
+      "C2": 2000,
+      "A1": 5000
+    }
+  },
+  "second_model_family": {
+    "status": "to be pinned at preregistration (January 2027); a second open-weight family recorded the same way"
+  },
+  "hosted_model_used_in_legacy_pilot": {
+    "model": "gemini-2.5-flash-lite",
+    "date": "2026-05-04",
+    "note": "ten-agent single-prompt predecessor pilot only; see legacy_pilot/. Not used for the current design."
+  }
+}

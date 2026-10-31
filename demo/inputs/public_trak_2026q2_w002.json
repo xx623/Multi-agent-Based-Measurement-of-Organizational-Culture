@@ -1,0 +1,36 @@
+{
+  "passage_id": "PUBLIC-TRAK-2026Q2:w002",
+  "group_key": "PUBLIC-TRAK:FY2026Q2",
+  "license": "public",
+  "source_window": {
+    "units": [
+      {"sid": "S1", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:q1", "speaker_role": "analyst", "window_role": "context",
+       "text": "This one I'll direct toward [PERSON_002]."},
+      {"sid": "S2", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:q2", "speaker_role": "analyst", "window_role": "context",
+       "text": "[PERSON_002], you talked about investment spending, but I'm trying to understand how that showed up in your results, because you've talked about how it seems that you reduced the amount of OpEx required."},
+      {"sid": "S3", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:q3", "speaker_role": "analyst", "window_role": "context",
+       "text": "Where does investment spending, where do I see that in the P&L?"},
+      {"sid": "S4", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:a1", "speaker_role": "executive", "window_role": "focus",
+       "text": "You would spend more in development, less in sales and marketing, but some of those things cover in both categories."},
+      {"sid": "S5", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:a2", "speaker_role": "executive", "window_role": "focus",
+       "text": "Because we spent less in marketing, but some of those people were utilized in development, you have to look at the totality of the expenses."},
+      {"sid": "S6", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:a3", "speaker_role": "executive", "window_role": "focus",
+       "text": "You can't look at necessarily the line items."},
+      {"sid": "S7", "source_ref": "sec:0001437749-26-004737:ex99.2:qa6:a4", "speaker_role": "executive", "window_role": "focus",
+       "text": "In aggregate, our spending is less."},
+      {"sid": "S8", "source_ref": "sec:0001437749-26-004737:ex99.2:qa7:q1", "speaker_role": "analyst", "window_role": "context",
+       "text": "Are you capitalizing any of those costs?"},
+      {"sid": "S9", "source_ref": "sec:0001437749-26-004737:ex99.2:qa7:a1", "speaker_role": "executive", "window_role": "focus",
+       "text": "There's some costs with the patent now, but it's a de minimis number."}
+    ]
+  },
+  "provenance": {
+    "license": "public",
+    "source": "US SEC EDGAR, Form 8-K filed 2026-02-19 by ReposiTrak, Inc. (CIK 50471), Exhibit 99.2, transcript of the second quarter fiscal 2026 earnings call held 2026-02-17",
+    "accession": "0001437749-26-004737",
+    "url": "https://www.sec.gov/Archives/edgar/data/50471/000143774926004737/ex_922794.htm",
+    "speaker": "question-and-answer session: sell-side analyst (context) and Chief Financial Officer (focus); two consecutive exchanges",
+    "text_status": "verbatim; the CFO's first name is masked as [PERSON_002]",
+    "note": "Public record. Provenance fields are never passed to any prompt."
+  }
+}

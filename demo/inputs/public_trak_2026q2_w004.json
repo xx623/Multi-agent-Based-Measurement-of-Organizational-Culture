@@ -1,0 +1,30 @@
+{
+  "passage_id": "PUBLIC-TRAK-2026Q2:w004",
+  "group_key": "PUBLIC-TRAK:FY2026Q2",
+  "license": "public",
+  "source_window": {
+    "units": [
+      {"sid": "S1", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:d1", "speaker_role": "executive", "window_role": "focus",
+       "text": "As I mentioned, the primary issue with traceability continues to be the consistent accuracy of supplier data."},
+      {"sid": "S2", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:d2", "speaker_role": "executive", "window_role": "focus",
+       "text": "The error rate in data we initially received from suppliers, especially small suppliers, is somewhere between 50% and 70%."},
+      {"sid": "S3", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:d3", "speaker_role": "executive", "window_role": "focus",
+       "text": "EDI is just the envelope."},
+      {"sid": "S4", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:d4", "speaker_role": "executive", "window_role": "focus",
+       "text": "Alternatively, the second approach expects the retailer or distributor to scan each and every case and have electronic data."},
+      {"sid": "S5", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:d5", "speaker_role": "executive", "window_role": "focus",
+       "text": "We use our artificial intelligence tools to do this."},
+      {"sid": "S6", "source_ref": "sec:0001437749-26-004737:ex99.2:ceo:d6", "speaker_role": "executive", "window_role": "focus",
+       "text": "We have over 500 error detection algorithms in our arsenal, and we're growing the detection parameters day by day."}
+    ]
+  },
+  "provenance": {
+    "license": "public",
+    "source": "US SEC EDGAR, Form 8-K filed 2026-02-19 by ReposiTrak, Inc. (CIK 50471), Exhibit 99.2, transcript of the second quarter fiscal 2026 earnings call held 2026-02-17",
+    "accession": "0001437749-26-004737",
+    "url": "https://www.sec.gov/Archives/edgar/data/50471/000143774926004737/ex_922794.htm",
+    "speaker": "Chairman and Chief Executive Officer, prepared remarks on supplier data accuracy",
+    "text_status": "six verbatim sentences selected from one block of the remarks, in their original order; intervening sentences are not reproduced, so the window is not a contiguous excerpt",
+    "note": "Public record. Provenance fields are never passed to any prompt."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "passage_id": "DEMO-C:001",
+  "flags": [
+    {
+      "id": "F1",
+      "type": "OMITTED_QUALIFIER",
+      "target_item": "E1",
+      "sentences": [
+        "S2"
+      ],
+      "question": "What condition is placed on teams sharing unsuccessful results?"
+    }
+  ],
+  "complete_and_supported": false
+}
