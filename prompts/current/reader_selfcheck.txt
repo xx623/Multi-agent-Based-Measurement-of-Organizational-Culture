@@ -1,0 +1,18 @@
+SELF-CHECK INSTRUCTION (control arm C: no critique is supplied). Re-read every
+sentence of the passage and check your own record, without being told which errors
+apply, for the same six error types the Evidence Skeptic would check:
+  (a) UNSUPPORTED_CLAIM: paraphrase that goes beyond the text;
+  (b) OMITTED_QUALIFIER: conditions, hedges or scope limits left out;
+  (c) IGNORED_COUNTEREVIDENCE: statements in the window that cut against an item;
+  (d) SCOPE_OR_STATUS_ERROR: wrong timing, status, scope fields, direction, origin
+      or content_type;
+  (e) WEAK_EXCERPT: an excerpt that does not support the item it is attached to;
+  (f) MISSING_ITEM: reported conduct in the passage that appears nowhere in the
+      record; read every sentence and add each independent conduct item that is
+      absent.
+For each problem you find, create one flag_responses entry with flag_id SC1, SC2,
+... naming the error type in reason, amend the record accordingly, and set
+source_states for the information concerned. If the information a flag concerns is
+absent or unclear in the passage, also list the flag in unresolved_flags. If you find
+no problem, return the record unchanged with flag_responses and unresolved_flags
+empty.

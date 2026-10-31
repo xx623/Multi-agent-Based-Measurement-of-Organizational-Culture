@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "process.schema.json",
+  "title": "Adjudication process record (A1)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "narrow",
+              "withhold"
+            ]
+          }
+        },
+        "required": [
+          "claim_ref",
+          "action"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "unresolved_objections": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    },
+    "escalate_to_human": {
+      "type": "boolean"
+    },
+    "output_state": {
+      "type": "string",
+      "enum": [
+        "valid",
+        "abstained"
+      ]
+    },
+    "abstention_reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "passage_id",
+    "actions",
+    "unresolved_objections",
+    "escalate_to_human",
+    "output_state"
+  ],
+  "additionalProperties": false
+}

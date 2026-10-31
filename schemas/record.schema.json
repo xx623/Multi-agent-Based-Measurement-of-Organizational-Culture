@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "record.schema.json",
+  "title": "Reader record (R1, R2)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conduct": {
+            "type": "string",
+            "minLength": 1
+          },
+          "timing": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "completed",
+              "ongoing",
+              "planned"
+            ]
+          },
+          "content_type": {
+            "type": "string",
+            "enum": [
+              "expectation",
+              "rule",
+              "routine",
+              "episode"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "required",
+              "encouraged",
+              "permitted",
+              "discouraged",
+              "sanctioned",
+              "unclear"
+            ]
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "internal",
+              "external",
+              "unstated"
+            ]
+          },
+          "scope": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "organization-wide",
+                  "unit or function",
+                  "team or role",
+                  "unspecified"
+                ]
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "extent": {
+                "type": "string",
+                "enum": [
+                  "one",
+                  "some",
+                  "all",
+                  "named",
+                  "unspecified"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "target",
+              "extent"
+            ],
+            "additionalProperties": false
+          },
+          "qualifications": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "excerpt_sentence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "excerpt_span": {
+            "type": "object",
+            "properties": {
+              "sentence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start": {
+                "type": "integer"
+              },
+              "end": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "sentence",
+              "start",
+              "end"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "actor",
+          "conduct",
+          "timing",
+          "status",
+          "content_type",
+          "direction",
+          "origin",
+          "scope",
+          "qualifications",
+          "excerpt",
+          "excerpt_sentence"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "declarations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sentence": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "sentence"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "unresolved_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "flag_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "UNSUPPORTED_CLAIM",
+              "OMITTED_QUALIFIER",
+              "IGNORED_COUNTEREVIDENCE",
+              "SCOPE_OR_STATUS_ERROR",
+              "WEAK_EXCERPT",
+              "MISSING_ITEM"
+            ]
+          },
+          "target_item": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_states": {
+            "type": "string",
+            "enum": [
+              "absent",
+              "unclear",
+              "present"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "flag_id",
+          "type",
+          "target_item",
+          "source_states",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "flag_responses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "flag_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "amended",
+              "added_item",
+              "removed_item",
+              "defended"
+            ]
+          },
+          "source_states": {
+            "type": "string",
+            "enum": [
+              "absent",
+              "unclear",
+              "present"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "flag_id",
+          "action",
+          "source_states",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "removed_item_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "passage_id",
+    "items",
+    "declarations",
+    "unresolved_flags",
+    "flag_responses",
+    "removed_item_ids"
+  ],
+  "additionalProperties": false
+}

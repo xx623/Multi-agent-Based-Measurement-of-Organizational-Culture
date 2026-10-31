@@ -1,0 +1,229 @@
+{
+  "status": "prompt_and_interface_specification_not_a_live_model_run",
+  "roles": 11,
+  "logical_calls_per_full_run": 14,
+  "specialists_may_run_in_parallel": true,
+  "specialists_see_each_other": false,
+  "schedule": [
+    {
+      "call": 1,
+      "prompt": "prompts/agent7_reader.txt",
+      "output_id": "R1",
+      "purpose": "initial source extraction"
+    },
+    {
+      "call": 2,
+      "prompt": "prompts/agent8_evidence_skeptic.txt",
+      "output_id": "S1",
+      "purpose": "source check"
+    },
+    {
+      "call": 3,
+      "prompt": "prompts/agent7_reader.txt",
+      "output_id": "R2",
+      "purpose": "one source revision"
+    },
+    {
+      "call": 4,
+      "prompt": "prompts/agent1_collaboration.txt",
+      "output_id": "T1",
+      "purpose": "independent specialist recommendation"
+    },
+    {
+      "call": 5,
+      "prompt": "prompts/agent2_customer.txt",
+      "output_id": "T2",
+      "purpose": "independent specialist recommendation"
+    },
+    {
+      "call": 6,
+      "prompt": "prompts/agent3_innovation.txt",
+      "output_id": "T3",
+      "purpose": "independent specialist recommendation"
+    },
+    {
+      "call": 7,
+      "prompt": "prompts/agent4_integrity.txt",
+      "output_id": "T4",
+      "purpose": "independent specialist recommendation"
+    },
+    {
+      "call": 8,
+      "prompt": "prompts/agent5_performance.txt",
+      "output_id": "T5",
+      "purpose": "independent specialist recommendation"
+    },
+    {
+      "call": 9,
+      "prompt": "prompts/agent6_miscellaneous.txt",
+      "output_id": "T6",
+      "purpose": "independent specialist recommendation"
+    },
+    {
+      "call": 10,
+      "prompt": "prompts/agent9_judge.txt",
+      "output_id": "J1",
+      "purpose": "initial interpretation"
+    },
+    {
+      "call": 11,
+      "prompt": "prompts/agent10_interpretive_critic.txt",
+      "output_id": "C1",
+      "purpose": "first challenge"
+    },
+    {
+      "call": 12,
+      "prompt": "prompts/agent9_judge.txt",
+      "output_id": "J2",
+      "purpose": "response to C1"
+    },
+    {
+      "call": 13,
+      "prompt": "prompts/agent10_interpretive_critic.txt",
+      "output_id": "C2",
+      "purpose": "reassessment of J2"
+    },
+    {
+      "call": 14,
+      "prompt": "prompts/agent11_adjudicator.txt",
+      "output_id": "A1",
+      "purpose": "final adjudication of all four statements"
+    }
+  ],
+  "source_roles": [
+    "agent7_reader.txt",
+    "agent8_evidence_skeptic.txt"
+  ],
+  "specialist_component_text": "serialize only the restricted verified practice record, never the original narrative",
+  "judge_receives_six_specialist_outputs": true,
+  "critic_receives_raw_specialist_outputs": false,
+  "adjudicator_receives_raw_specialist_outputs": false,
+  "adjudicator_statements": [
+    "J1",
+    "C1",
+    "J2",
+    "C2"
+  ],
+  "placeholders": {
+    "agent10_interpretive_critic.txt": [
+      "codebook",
+      "critic_round",
+      "input_id",
+      "judgment_under_review",
+      "prior_critic_output",
+      "verified_record"
+    ],
+    "agent11_adjudicator.txt": [
+      "codebook",
+      "critic_round1",
+      "critic_round2",
+      "input_id",
+      "judge_round1",
+      "judge_round2",
+      "verified_record"
+    ],
+    "agent1_collaboration.txt": [
+      "component_text",
+      "input_id"
+    ],
+    "agent2_customer.txt": [
+      "component_text",
+      "input_id"
+    ],
+    "agent3_innovation.txt": [
+      "component_text",
+      "input_id"
+    ],
+    "agent4_integrity.txt": [
+      "component_text",
+      "input_id"
+    ],
+    "agent5_performance.txt": [
+      "component_text",
+      "input_id"
+    ],
+    "agent6_miscellaneous.txt": [
+      "component_text",
+      "input_id"
+    ],
+    "agent7_reader.txt": [
+      "input_id",
+      "previous_reader_record",
+      "reader_phase",
+      "skeptic_feedback",
+      "source_window"
+    ],
+    "agent8_evidence_skeptic.txt": [
+      "input_id",
+      "reader_record",
+      "source_window"
+    ],
+    "agent9_judge.txt": [
+      "codebook",
+      "critic_feedback",
+      "input_id",
+      "judge_round",
+      "previous_judgment",
+      "specialist_outputs",
+      "verified_record"
+    ]
+  },
+  "specialist_output_keys": {
+    "Collaboration and People-Focused": "collaboration_people_focused_agent",
+    "Customer-Oriented": "customer_oriented_agent",
+    "Innovation and Adaptability": "innovation_adaptability_agent",
+    "Integrity and Risk Management": "integrity_risk_management_agent",
+    "Performance-Oriented": "performance_oriented_agent",
+    "Miscellaneous": "miscellaneous_agent"
+  },
+  "interpretation_cells": [
+    {
+      "culture_type": "Collaboration and People-Focused",
+      "temporal_status": "implemented"
+    },
+    {
+      "culture_type": "Collaboration and People-Focused",
+      "temporal_status": "planned"
+    },
+    {
+      "culture_type": "Customer-Oriented",
+      "temporal_status": "implemented"
+    },
+    {
+      "culture_type": "Customer-Oriented",
+      "temporal_status": "planned"
+    },
+    {
+      "culture_type": "Innovation and Adaptability",
+      "temporal_status": "implemented"
+    },
+    {
+      "culture_type": "Innovation and Adaptability",
+      "temporal_status": "planned"
+    },
+    {
+      "culture_type": "Integrity and Risk Management",
+      "temporal_status": "implemented"
+    },
+    {
+      "culture_type": "Integrity and Risk Management",
+      "temporal_status": "planned"
+    },
+    {
+      "culture_type": "Performance-Oriented",
+      "temporal_status": "implemented"
+    },
+    {
+      "culture_type": "Performance-Oriented",
+      "temporal_status": "planned"
+    },
+    {
+      "culture_type": "Miscellaneous",
+      "temporal_status": "implemented"
+    },
+    {
+      "culture_type": "Miscellaneous",
+      "temporal_status": "planned"
+    }
+  ]
+}

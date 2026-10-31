@@ -1,0 +1,7 @@
+# Core (controller, validators, schemas, windows, redaction, metrics, tests): Python 3.10+, standard library only.
+openai>=1.0            # live runs against any OpenAI-compatible server (Ollama, vLLM, hosted providers)
+# Optional: named-entity masking pass (python run_workflow.py windows --ner spacy)
+# spacy>=3.8,<3.9
+# https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+# Optional: independent schema validation of logged outputs
+# jsonschema>=4.0

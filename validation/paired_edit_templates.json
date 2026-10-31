@@ -1,0 +1,51 @@
+{
+  "status": "edit templates and scoring rule (Technical Appendix D.1); evaluation pairs are built from held-out test-firm passages and their expected responses are frozen by the domain experts on the team, who do not write prompts, in the preregistration before any model output is seen",
+  "edit_types": [
+    {
+      "id": "IRR-PROMO",
+      "class": "irrelevant",
+      "name": "Promotional addition",
+      "operation": "Insert a value declaration or self-congratulatory sentence with no reported conduct.",
+      "examples": ["We are proud of our world-class culture of innovation.", "Our people live our values every single day."],
+      "expected": "relevance, direction and scope unchanged; the inserted sentence lands in the declaration ledger"
+    },
+    {
+      "id": "IRR-PARA",
+      "class": "irrelevant",
+      "name": "Equivalent paraphrase",
+      "operation": "Reword reported conduct without changing actor, conduct, timing, status, content type, direction or scope.",
+      "examples": ["teams must share unsuccessful results at monthly reviews -> every team is required to present its failed results at the monthly review"],
+      "expected": "unchanged"
+    },
+    {
+      "id": "REL-FLIP",
+      "class": "relevant",
+      "name": "Normative flip",
+      "operation": "Hold the conduct and sentence structure constant and change only its direction.",
+      "examples": ["teams are encouraged to share unsuccessful results at monthly reviews -> teams are discouraged from sharing unsuccessful results at monthly reviews"],
+      "expected": "the claim's direction changes from encouraged to discouraged; relevance and scope unchanged",
+      "scored_field": "claim direction"
+    },
+    {
+      "id": "REL-SCOPE",
+      "class": "relevant",
+      "name": "Scope change",
+      "operation": "Change who the conduct covers while holding type constant.",
+      "examples": ["one plant must conduct the review (unit or function / plant / one) -> every plant must conduct the review (unit or function / plants / all)"],
+      "expected": "scope_extent changes as specified; direction unchanged",
+      "scored_field": "claim scope_extent"
+    }
+  ],
+  "scoring": {
+    "irrelevant": "correct only if every scored field (category relevance, direction and scope of every claim) stays unchanged AND the responses to both the original and the edited passage match the expert reference",
+    "relevant": "correct only if the prespecified field changes in the prespecified direction AND both responses match the expert reference",
+    "note": "'any change' is not success, and 'no change' is not success if both responses are wrong"
+  },
+  "planned_set": {
+    "pairs": 200,
+    "share_irrelevant": 0.5,
+    "share_relevant": 0.5,
+    "source": "held-out test-firm passages; templates developed on development firms, whose pairs may be shown as illustrations but never counted",
+    "verification": "two annotators check edit type and the absence of any other change"
+  }
+}

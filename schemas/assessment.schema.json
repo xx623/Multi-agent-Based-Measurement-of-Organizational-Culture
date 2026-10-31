@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "assessment.schema.json",
+  "title": "Expertise agent assessment (T1-T6)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Collaboration and people-focused",
+        "Customer-oriented",
+        "Innovation and adaptability",
+        "Integrity and risk management",
+        "Performance-oriented",
+        "Other reported norms"
+      ]
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "relevance": {
+            "type": "string",
+            "enum": [
+              "none",
+              "weak",
+              "moderate",
+              "strong"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "required",
+              "encouraged",
+              "permitted",
+              "discouraged",
+              "sanctioned",
+              "unclear"
+            ]
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "internal",
+              "external",
+              "unstated"
+            ]
+          },
+          "scope": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "organization-wide",
+                  "unit or function",
+                  "team or role",
+                  "unspecified"
+                ]
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "extent": {
+                "type": "string",
+                "enum": [
+                  "one",
+                  "some",
+                  "all",
+                  "named",
+                  "unspecified"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "target",
+              "extent"
+            ],
+            "additionalProperties": false
+          },
+          "reasons_for": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "reasons_against": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "unresolved": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "evidence_ids",
+          "relevance",
+          "direction",
+          "origin",
+          "scope",
+          "reasons_for",
+          "reasons_against",
+          "unresolved"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "passage_id",
+    "category",
+    "entries"
+  ],
+  "additionalProperties": false
+}

@@ -1,4 +1,4 @@
-# Multi-agent-Based-Measurement-of-Organizational-Culture
+# Multi-agent measurement of reported organizational norms from earnings calls
 
 Research artifact for a Stage 1 proposal to the *Organization Science* special issue
 **AI-Enabled Frontiers in Organizational Science**. Authors are anonymized for review;
@@ -35,7 +35,7 @@ Python 3.10+; the core uses the standard library only. Live runs need `pip insta
 and an OpenAI-compatible server for the pinned model.
 
 ```bash
-python -m unittest discover -s tests          # 38 tests: validators, boundary rule, view, windows, redaction, metrics, recorded replay
+python -m unittest discover -s tests          # 41 tests: validators, boundary rule, view, windows, redaction, metrics, recorded replay
 python run_workflow.py replay --recorded demo/recorded/DEMO-C_001   # offline replay of a recorded run
 python run_workflow.py export-schemas         # regenerate schemas/ from the codebook
 ```

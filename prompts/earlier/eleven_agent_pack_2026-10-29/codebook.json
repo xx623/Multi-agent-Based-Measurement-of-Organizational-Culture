@@ -1,0 +1,40 @@
+{
+  "status": "proposed_prompt_specification_not_preregistered_or_model_validated",
+  "target": "reported normative content in earnings-call accounts",
+  "culture_types": [
+    "Collaboration and People-Focused",
+    "Customer-Oriented",
+    "Innovation and Adaptability",
+    "Integrity and Risk Management",
+    "Performance-Oriented",
+    "Miscellaneous"
+  ],
+  "definitions": [
+    "Collaboration and People-Focused:\nA culture focusing on (or deficient in): collaboration, cooperation, teamwork, supportive environment, low levels of conflict, community, communication within the organization, employee well-being, employee equity sharing and compensation, diversity, inclusion, empowerment, or talent development.",
+    "Customer-Oriented:\nA culture focusing on (or deficient in): sales orientation, customer service, listening to the customer, customer retention, customer experience, customer satisfaction, user experience, client service, being brand-driven, quality of product, quality of service, quality of solution, or taking pride in service.",
+    "Innovation and Adaptability:\nA culture focusing on (or deficient in): innovation, creativity, technology adoption, entrepreneurship, adaptability, transformation, flexibility, agility, willingness to experiment, moving beyond tradition, disruption, being fast-moving, quick to take advantage of opportunities, resilience to change, or taking initiative.",
+    "Integrity and Risk Management:\nA culture focusing on (or deficient in): integrity, high ethical standards, honesty, transparency, accountability, doing the right thing, fair practices, being trustworthy, risk management, risk control, compliance, discipline, financial prudence, safety, or internal control.",
+    "Performance-Oriented:\nA culture focusing on (or deficient in): high expectations for performance, achievement, competitiveness, results, hard work, efficiency, productivity, consistency in executing tasks, setting clear goals, following best practices, striving for operational excellence, or exceeding benchmarks.",
+    "Miscellaneous:\nA culture-related discussion that is too general, vague, or non-specific to fit the other five types. Examples: \"strong culture\", \"weak culture\", \"positive culture\", \"negative culture\", or \"cultural change\" mentioned without details about what kind of culture is being described."
+  ],
+  "temporal_channels": [
+    "implemented",
+    "planned"
+  ],
+  "rules": {
+    "R1": "Use only source-linked evidence with existing evidence IDs in the verified practice record.",
+    "R2": "A reported normative expectation needs a stated requirement, encouragement, toleration, sanction, or supported recurring behavioral pattern. An isolated event is not sufficient by itself.",
+    "R3": "Financial results, investments, customer demand, and strategic choices alone do not establish a cultural expectation.",
+    "R4": "Restrict the conclusion to the actors, units, time period and qualifications supported by the record. A formal rule supports a reported expectation, not observed compliance or shared beliefs.",
+    "R5": "Keep implemented-as-reported and planned expectations separate. Unknown-time evidence cannot establish either known channel. A completed action and an ongoing practice can both be implemented as reported.",
+    "R6": "Pure value declarations and promotional slogans do not strengthen a judgment about reported practice; the declaration ledger is withheld from interpretation.",
+    "R7": "Absent, ambiguous, unresolved, or weak evidence warrants insufficiency or a narrower scope; it is not opposition and does not establish that the organization lacks culture.",
+    "R8": "Allow more than one supported specific culture type. Do not force a dominant type, count keywords, or use agent agreement as proof.",
+    "R9": "Every substantive judgment needs nonblank scope and warrant, fixed criterion IDs and valid evidence IDs. Mixed requires supporting and opposing evidence in the same culture type and temporal channel.",
+    "R10": "Miscellaneous is a residual discussion category, not a sixth substantive normative orientation. Generic or multi-type discussion does not establish an implemented norm without the evidence required above."
+  },
+  "known_limits": [
+    "No inference of actual adherence, consensus or norm intensity.",
+    "Legacy classification recommendations do not themselves establish a measure."
+  ]
+}

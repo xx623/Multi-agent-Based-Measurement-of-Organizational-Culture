@@ -1,0 +1,1141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "measurement.schema.json",
+  "title": "Final measurement record (A1)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "categories": {
+      "type": "object",
+      "properties": {
+        "Collaboration and people-focused": {
+          "type": "object",
+          "properties": {
+            "relevance": {
+              "type": "string",
+              "enum": [
+                "none",
+                "weak",
+                "moderate",
+                "strong"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "required",
+                "encouraged",
+                "permitted",
+                "discouraged",
+                "sanctioned",
+                "unclear",
+                "mixed",
+                "none"
+              ]
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "weak",
+                      "moderate",
+                      "strong"
+                    ]
+                  },
+                  "conduct": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "expectation",
+                      "rule",
+                      "routine",
+                      "episode"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "encouraged",
+                      "permitted",
+                      "discouraged",
+                      "sanctioned",
+                      "unclear"
+                    ]
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "internal",
+                      "external",
+                      "unstated"
+                    ]
+                  },
+                  "scope": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "organization-wide",
+                          "unit or function",
+                          "team or role",
+                          "unspecified"
+                        ]
+                      },
+                      "target": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "extent": {
+                        "type": "string",
+                        "enum": [
+                          "one",
+                          "some",
+                          "all",
+                          "named",
+                          "unspecified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "target",
+                      "extent"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "conduct_status": {
+                    "type": "string",
+                    "enum": [
+                      "completed",
+                      "ongoing",
+                      "planned"
+                    ]
+                  },
+                  "evidence_for": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "evidence_against": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "limitations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_INHERENT",
+                            "RESOLVABLE",
+                            "UNDETERMINED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "claim_ref",
+                  "relevance",
+                  "conduct",
+                  "content_type",
+                  "direction",
+                  "origin",
+                  "scope",
+                  "conduct_status",
+                  "evidence_for",
+                  "evidence_against",
+                  "limitations"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "relevance",
+            "direction",
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "Customer-oriented": {
+          "type": "object",
+          "properties": {
+            "relevance": {
+              "type": "string",
+              "enum": [
+                "none",
+                "weak",
+                "moderate",
+                "strong"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "required",
+                "encouraged",
+                "permitted",
+                "discouraged",
+                "sanctioned",
+                "unclear",
+                "mixed",
+                "none"
+              ]
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "weak",
+                      "moderate",
+                      "strong"
+                    ]
+                  },
+                  "conduct": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "expectation",
+                      "rule",
+                      "routine",
+                      "episode"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "encouraged",
+                      "permitted",
+                      "discouraged",
+                      "sanctioned",
+                      "unclear"
+                    ]
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "internal",
+                      "external",
+                      "unstated"
+                    ]
+                  },
+                  "scope": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "organization-wide",
+                          "unit or function",
+                          "team or role",
+                          "unspecified"
+                        ]
+                      },
+                      "target": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "extent": {
+                        "type": "string",
+                        "enum": [
+                          "one",
+                          "some",
+                          "all",
+                          "named",
+                          "unspecified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "target",
+                      "extent"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "conduct_status": {
+                    "type": "string",
+                    "enum": [
+                      "completed",
+                      "ongoing",
+                      "planned"
+                    ]
+                  },
+                  "evidence_for": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "evidence_against": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "limitations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_INHERENT",
+                            "RESOLVABLE",
+                            "UNDETERMINED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "claim_ref",
+                  "relevance",
+                  "conduct",
+                  "content_type",
+                  "direction",
+                  "origin",
+                  "scope",
+                  "conduct_status",
+                  "evidence_for",
+                  "evidence_against",
+                  "limitations"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "relevance",
+            "direction",
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "Innovation and adaptability": {
+          "type": "object",
+          "properties": {
+            "relevance": {
+              "type": "string",
+              "enum": [
+                "none",
+                "weak",
+                "moderate",
+                "strong"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "required",
+                "encouraged",
+                "permitted",
+                "discouraged",
+                "sanctioned",
+                "unclear",
+                "mixed",
+                "none"
+              ]
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "weak",
+                      "moderate",
+                      "strong"
+                    ]
+                  },
+                  "conduct": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "expectation",
+                      "rule",
+                      "routine",
+                      "episode"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "encouraged",
+                      "permitted",
+                      "discouraged",
+                      "sanctioned",
+                      "unclear"
+                    ]
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "internal",
+                      "external",
+                      "unstated"
+                    ]
+                  },
+                  "scope": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "organization-wide",
+                          "unit or function",
+                          "team or role",
+                          "unspecified"
+                        ]
+                      },
+                      "target": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "extent": {
+                        "type": "string",
+                        "enum": [
+                          "one",
+                          "some",
+                          "all",
+                          "named",
+                          "unspecified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "target",
+                      "extent"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "conduct_status": {
+                    "type": "string",
+                    "enum": [
+                      "completed",
+                      "ongoing",
+                      "planned"
+                    ]
+                  },
+                  "evidence_for": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "evidence_against": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "limitations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_INHERENT",
+                            "RESOLVABLE",
+                            "UNDETERMINED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "claim_ref",
+                  "relevance",
+                  "conduct",
+                  "content_type",
+                  "direction",
+                  "origin",
+                  "scope",
+                  "conduct_status",
+                  "evidence_for",
+                  "evidence_against",
+                  "limitations"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "relevance",
+            "direction",
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "Integrity and risk management": {
+          "type": "object",
+          "properties": {
+            "relevance": {
+              "type": "string",
+              "enum": [
+                "none",
+                "weak",
+                "moderate",
+                "strong"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "required",
+                "encouraged",
+                "permitted",
+                "discouraged",
+                "sanctioned",
+                "unclear",
+                "mixed",
+                "none"
+              ]
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "weak",
+                      "moderate",
+                      "strong"
+                    ]
+                  },
+                  "conduct": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "expectation",
+                      "rule",
+                      "routine",
+                      "episode"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "encouraged",
+                      "permitted",
+                      "discouraged",
+                      "sanctioned",
+                      "unclear"
+                    ]
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "internal",
+                      "external",
+                      "unstated"
+                    ]
+                  },
+                  "scope": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "organization-wide",
+                          "unit or function",
+                          "team or role",
+                          "unspecified"
+                        ]
+                      },
+                      "target": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "extent": {
+                        "type": "string",
+                        "enum": [
+                          "one",
+                          "some",
+                          "all",
+                          "named",
+                          "unspecified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "target",
+                      "extent"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "conduct_status": {
+                    "type": "string",
+                    "enum": [
+                      "completed",
+                      "ongoing",
+                      "planned"
+                    ]
+                  },
+                  "evidence_for": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "evidence_against": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "limitations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_INHERENT",
+                            "RESOLVABLE",
+                            "UNDETERMINED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "claim_ref",
+                  "relevance",
+                  "conduct",
+                  "content_type",
+                  "direction",
+                  "origin",
+                  "scope",
+                  "conduct_status",
+                  "evidence_for",
+                  "evidence_against",
+                  "limitations"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "relevance",
+            "direction",
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "Performance-oriented": {
+          "type": "object",
+          "properties": {
+            "relevance": {
+              "type": "string",
+              "enum": [
+                "none",
+                "weak",
+                "moderate",
+                "strong"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "required",
+                "encouraged",
+                "permitted",
+                "discouraged",
+                "sanctioned",
+                "unclear",
+                "mixed",
+                "none"
+              ]
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "weak",
+                      "moderate",
+                      "strong"
+                    ]
+                  },
+                  "conduct": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "expectation",
+                      "rule",
+                      "routine",
+                      "episode"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "encouraged",
+                      "permitted",
+                      "discouraged",
+                      "sanctioned",
+                      "unclear"
+                    ]
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "internal",
+                      "external",
+                      "unstated"
+                    ]
+                  },
+                  "scope": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "organization-wide",
+                          "unit or function",
+                          "team or role",
+                          "unspecified"
+                        ]
+                      },
+                      "target": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "extent": {
+                        "type": "string",
+                        "enum": [
+                          "one",
+                          "some",
+                          "all",
+                          "named",
+                          "unspecified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "target",
+                      "extent"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "conduct_status": {
+                    "type": "string",
+                    "enum": [
+                      "completed",
+                      "ongoing",
+                      "planned"
+                    ]
+                  },
+                  "evidence_for": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "evidence_against": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "limitations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_INHERENT",
+                            "RESOLVABLE",
+                            "UNDETERMINED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "claim_ref",
+                  "relevance",
+                  "conduct",
+                  "content_type",
+                  "direction",
+                  "origin",
+                  "scope",
+                  "conduct_status",
+                  "evidence_for",
+                  "evidence_against",
+                  "limitations"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "relevance",
+            "direction",
+            "claims"
+          ],
+          "additionalProperties": false
+        },
+        "Other reported norms": {
+          "type": "object",
+          "properties": {
+            "relevance": {
+              "type": "string",
+              "enum": [
+                "none",
+                "weak",
+                "moderate",
+                "strong"
+              ]
+            },
+            "direction": {
+              "type": "string",
+              "enum": [
+                "required",
+                "encouraged",
+                "permitted",
+                "discouraged",
+                "sanctioned",
+                "unclear",
+                "mixed",
+                "none"
+              ]
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "claim_ref": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "weak",
+                      "moderate",
+                      "strong"
+                    ]
+                  },
+                  "conduct": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "content_type": {
+                    "type": "string",
+                    "enum": [
+                      "expectation",
+                      "rule",
+                      "routine",
+                      "episode"
+                    ]
+                  },
+                  "direction": {
+                    "type": "string",
+                    "enum": [
+                      "required",
+                      "encouraged",
+                      "permitted",
+                      "discouraged",
+                      "sanctioned",
+                      "unclear"
+                    ]
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "internal",
+                      "external",
+                      "unstated"
+                    ]
+                  },
+                  "scope": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "organization-wide",
+                          "unit or function",
+                          "team or role",
+                          "unspecified"
+                        ]
+                      },
+                      "target": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "extent": {
+                        "type": "string",
+                        "enum": [
+                          "one",
+                          "some",
+                          "all",
+                          "named",
+                          "unspecified"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "target",
+                      "extent"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "conduct_status": {
+                    "type": "string",
+                    "enum": [
+                      "completed",
+                      "ongoing",
+                      "planned"
+                    ]
+                  },
+                  "evidence_for": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "evidence_against": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 0
+                  },
+                  "limitations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "kind": {
+                          "type": "string",
+                          "enum": [
+                            "SOURCE_INHERENT",
+                            "RESOLVABLE",
+                            "UNDETERMINED"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "claim_ref",
+                  "relevance",
+                  "conduct",
+                  "content_type",
+                  "direction",
+                  "origin",
+                  "scope",
+                  "conduct_status",
+                  "evidence_for",
+                  "evidence_against",
+                  "limitations"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            }
+          },
+          "required": [
+            "relevance",
+            "direction",
+            "claims"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "Collaboration and people-focused",
+        "Customer-oriented",
+        "Innovation and adaptability",
+        "Integrity and risk management",
+        "Performance-oriented",
+        "Other reported norms"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "passage_id",
+    "categories"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,35 @@
+{
+  "status": "controlled vocabularies for annotation and scoring; frozen with the codebook at preregistration",
+  "source": "codebook.json v2.0 vocabularies, reproduced for annotators",
+  "fields": {
+    "status": ["completed", "ongoing", "planned"],
+    "content_type": {
+      "values": ["expectation", "rule", "routine", "episode"],
+      "guidance": "routine only when the passage describes the conduct as standard practice for a defined set of actors (every, each, all, monthly); otherwise a reported past action is an episode; expectation = stated expectation without a formal rule; rule = formal requirement or prohibition."
+    },
+    "direction": {
+      "values": ["required", "encouraged", "permitted", "discouraged", "sanctioned", "unclear"],
+      "guidance": "what the organization is reported to do about the conduct; unclear when the passage reports the conduct without a normative verb."
+    },
+    "origin": {
+      "values": ["internal", "external", "unstated"],
+      "guidance": "external when the requirement is imposed from outside (regulation, customer); still coded as reported normative content."
+    },
+    "scope_type": ["organization-wide", "unit or function", "team or role", "unspecified"],
+    "scope_target": {
+      "normalization": "short string normalized to the placeholder or the unit/team/role name as written in the passage; 'Not stated' when none",
+      "scoring": "exact match after lower-casing and trimming; equivalent prose descriptions are not penalized because type and extent are scored separately"
+    },
+    "scope_extent": ["one", "some", "all", "named", "unspecified"],
+    "relevance": ["none", "weak", "moderate", "strong"],
+    "category_direction": ["required", "encouraged", "permitted", "discouraged", "sanctioned", "unclear", "mixed", "none"],
+    "source_states": ["absent", "unclear", "present"],
+    "flag_types": ["UNSUPPORTED_CLAIM", "OMITTED_QUALIFIER", "IGNORED_COUNTEREVIDENCE", "SCOPE_OR_STATUS_ERROR", "WEAK_EXCERPT", "MISSING_ITEM"],
+    "limitation_kinds": ["SOURCE_INHERENT", "RESOLVABLE", "UNDETERMINED"],
+    "adjudication_actions": ["accept", "narrow", "withhold"],
+    "output_states": ["valid", "abstained", "invalid"]
+  },
+  "layer1_reference_fields": ["supported_by_passage", "qualifier_omitted", "conduct_missing", "timing_correct", "status_correct", "content_type_correct", "scope_fields_correct", "direction_correct", "gap_source_states"],
+  "layer2_reference_fields": ["category_relevance", "claim_direction", "claim_origin", "claim_scope_type", "claim_scope_target", "claim_scope_extent", "claim_conduct_status", "claim_content_type"],
+  "categories": ["Collaboration and people-focused", "Customer-oriented", "Innovation and adaptability", "Integrity and risk management", "Performance-oriented", "Other reported norms"]
+}

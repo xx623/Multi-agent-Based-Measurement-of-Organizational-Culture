@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "record_interp.schema.json",
+  "title": "Interpretation view (derived; no declarations, spans or passage text)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conduct": {
+            "type": "string",
+            "minLength": 1
+          },
+          "timing": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "completed",
+              "ongoing",
+              "planned"
+            ]
+          },
+          "content_type": {
+            "type": "string",
+            "enum": [
+              "expectation",
+              "rule",
+              "routine",
+              "episode"
+            ]
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "required",
+              "encouraged",
+              "permitted",
+              "discouraged",
+              "sanctioned",
+              "unclear"
+            ]
+          },
+          "origin": {
+            "type": "string",
+            "enum": [
+              "internal",
+              "external",
+              "unstated"
+            ]
+          },
+          "scope": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "organization-wide",
+                  "unit or function",
+                  "team or role",
+                  "unspecified"
+                ]
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              },
+              "extent": {
+                "type": "string",
+                "enum": [
+                  "one",
+                  "some",
+                  "all",
+                  "named",
+                  "unspecified"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "target",
+              "extent"
+            ],
+            "additionalProperties": false
+          },
+          "qualifications": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "actor",
+          "conduct",
+          "timing",
+          "status",
+          "content_type",
+          "direction",
+          "origin",
+          "scope",
+          "qualifications",
+          "excerpt"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "UNSUPPORTED_CLAIM",
+              "OMITTED_QUALIFIER",
+              "IGNORED_COUNTEREVIDENCE",
+              "SCOPE_OR_STATUS_ERROR",
+              "WEAK_EXCERPT",
+              "MISSING_ITEM"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "source_states": {
+            "type": "string",
+            "enum": [
+              "absent",
+              "unclear",
+              "present"
+            ]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "type",
+          "evidence_ids",
+          "source_states",
+          "note"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "completeness_uncertain": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "passage_id",
+    "items",
+    "unresolved",
+    "completeness_uncertain"
+  ],
+  "additionalProperties": false
+}

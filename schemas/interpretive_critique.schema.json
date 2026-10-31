@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "interpretive_critique.schema.json",
+  "title": "Interpretive critic challenge / reassessment (C1, C2)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "round": {
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "criterion": {
+            "type": "string",
+            "enum": [
+              "a",
+              "b",
+              "c",
+              "d",
+              "e",
+              "f",
+              "g"
+            ]
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "narrowest_claim": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "claim_ref",
+          "criterion",
+          "evidence_ids",
+          "reason",
+          "narrowest_claim"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "accepted_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "claim_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "claim_ref",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "resolved_objection_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "passage_id",
+    "round",
+    "objections",
+    "accepted_claims",
+    "resolved_objection_ids"
+  ],
+  "additionalProperties": false
+}

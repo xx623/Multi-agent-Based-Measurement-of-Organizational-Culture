@@ -1,0 +1,27 @@
+{
+  "status": "software_checks_only_not_measurement_validation",
+  "date": "2026-10-31",
+  "prompt_files_current": 7,
+  "schema_files": 9,
+  "tests_run": 41,
+  "test_failures": 0,
+  "test_errors": 0,
+  "recorded_demo_replay_valid": true,
+  "five_role_prototype_executed_with_pinned_open_weight_model": true,
+  "pilot_batches": [
+    {
+      "batch": "experts_2026-10-31_qwen2.5-14b",
+      "passages_processed": 1,
+      "valid": 0,
+      "invalid": 0
+    },
+    {
+      "batch": "pilot_2026-10-31_qwen2.5-14b",
+      "passages_processed": 17,
+      "valid": 12,
+      "invalid": 1
+    }
+  ],
+  "expertise_agents_executed": true,
+  "measurement_validity_established": false
+}

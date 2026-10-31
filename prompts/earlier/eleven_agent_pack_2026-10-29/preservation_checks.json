@@ -1,0 +1,38 @@
+[
+  {
+    "source_filename": "agent1_collaboration(1).txt",
+    "package_filename": "prompts/agent1_collaboration.txt",
+    "sha256": "03782dec623da37bbbd928eafcf35ae255f541ff47390b9d3d89466c538cfefa",
+    "byte_identical": true
+  },
+  {
+    "source_filename": "agent2_customer(1).txt",
+    "package_filename": "prompts/agent2_customer.txt",
+    "sha256": "b01495914ccd661a5a603745c5766be8570065701c78d5d03d2967593b355716",
+    "byte_identical": true
+  },
+  {
+    "source_filename": "agent3_innovation(1).txt",
+    "package_filename": "prompts/agent3_innovation.txt",
+    "sha256": "d50c892b3e8d2a22c59f0ff28325a276a37caae0e0ff75ae81b6860434d6443a",
+    "byte_identical": true
+  },
+  {
+    "source_filename": "agent4_integrity(1).txt",
+    "package_filename": "prompts/agent4_integrity.txt",
+    "sha256": "149613f7947096eeb1f4698edaf90e6e8f0dd8f802a326d80deaf3aa9335348b",
+    "byte_identical": true
+  },
+  {
+    "source_filename": "agent5_performance(1).txt",
+    "package_filename": "prompts/agent5_performance.txt",
+    "sha256": "7da2ff5cecf48b6e36f985e5129c57857c90776839c8d6e01939361472868e14",
+    "byte_identical": true
+  },
+  {
+    "source_filename": "agent6_miscellaneous(1).txt",
+    "package_filename": "prompts/agent6_miscellaneous.txt",
+    "sha256": "bffada744aa88698378d49d7617cd8c4c954c6a8108cc106762a3960413591e7",
+    "byte_identical": true
+  }
+]

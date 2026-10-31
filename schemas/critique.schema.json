@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "critique.schema.json",
+  "title": "Evidence skeptic critique (S1)",
+  "type": "object",
+  "properties": {
+    "passage_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "UNSUPPORTED_CLAIM",
+              "OMITTED_QUALIFIER",
+              "IGNORED_COUNTEREVIDENCE",
+              "SCOPE_OR_STATUS_ERROR",
+              "WEAK_EXCERPT",
+              "MISSING_ITEM"
+            ]
+          },
+          "target_item": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sentences": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "target_item",
+          "sentences",
+          "question"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "complete_and_supported": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "passage_id",
+    "flags",
+    "complete_and_supported"
+  ],
+  "additionalProperties": false
+}

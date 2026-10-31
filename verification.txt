@@ -1,0 +1,46 @@
+test_copy_longer_than_25_words_is_rejected (test_boundary_rule.BoundaryRule.test_copy_longer_than_25_words_is_rejected) ... ok
+test_excerpt_sentence_is_corrected_when_quote_is_verbatim_elsewhere (test_boundary_rule.BoundaryRule.test_excerpt_sentence_is_corrected_when_quote_is_verbatim_elsewhere) ... ok
+test_paraphrase_and_exact_quotes_are_accepted (test_boundary_rule.BoundaryRule.test_paraphrase_and_exact_quotes_are_accepted) ... ok
+test_short_verbatim_fragment_inside_a_field_is_allowed (test_boundary_rule.BoundaryRule.test_short_verbatim_fragment_inside_a_field_is_allowed) ... ok
+test_status_direction_mixup_gets_directive_message (test_boundary_rule.BoundaryRule.test_status_direction_mixup_gets_directive_message) ... ok
+test_coverage_completeness_and_failures (test_metrics.Metrics.test_coverage_completeness_and_failures) ... ok
+test_direction_and_scope (test_metrics.Metrics.test_direction_and_scope) ... ok
+test_firm_bootstrap_keeps_units_together (test_metrics.Metrics.test_firm_bootstrap_keeps_units_together) ... ok
+test_pair_scoring (test_metrics.Metrics.test_pair_scoring) ... ok
+test_relevance_agreement_and_f1 (test_metrics.Metrics.test_relevance_agreement_and_f1) ... ok
+test_interpretation_inputs_carry_no_declaration_or_passage_text (test_replay.RecordedReplay.test_interpretation_inputs_carry_no_declaration_or_passage_text) ... ok
+test_recorded_outputs_still_pass_every_validator (test_replay.RecordedReplay.test_recorded_outputs_still_pass_every_validator) ... ok
+test_summary_is_derived_from_logged_files (test_replay.RecordedReplay.test_summary_is_derived_from_logged_files) ... ok
+test_abstention_lists_no_claims (test_validate.AdjudicatorRules.test_abstention_lists_no_claims) ... ok
+test_all_categories_required (test_validate.AdjudicatorRules.test_all_categories_required) ... ok
+test_category_relevance_equals_max_claim (test_validate.AdjudicatorRules.test_category_relevance_equals_max_claim) ... ok
+test_escalation_required_for_resolvable_limitations (test_validate.AdjudicatorRules.test_escalation_required_for_resolvable_limitations) ... ok
+test_scope_not_wider_than_judge_claim (test_validate.AdjudicatorRules.test_scope_not_wider_than_judge_claim) ... ok
+test_valid (test_validate.AdjudicatorRules.test_valid) ... ok
+test_withheld_claim_cannot_remain_in_measurement (test_validate.AdjudicatorRules.test_withheld_claim_cannot_remain_in_measurement) ... ok
+test_every_supported_claim_is_covered (test_validate.CriticRules.test_every_supported_claim_is_covered) ... ok
+test_round_one_cannot_resolve (test_validate.CriticRules.test_round_one_cannot_resolve) ... ok
+test_episode_only_claims_must_declare_generalization (test_validate.JudgeRules.test_episode_only_claims_must_declare_generalization) ... ok
+test_round_two_answers_every_objection (test_validate.JudgeRules.test_round_two_answers_every_objection) ... ok
+test_scope_cannot_be_widened (test_validate.JudgeRules.test_scope_cannot_be_widened) ... ok
+test_valid_claim (test_validate.JudgeRules.test_valid_claim) ... ok
+test_dropped_items_must_be_listed (test_validate.ReaderRules.test_dropped_items_must_be_listed) ... ok
+test_excerpt_must_be_verbatim_and_short (test_validate.ReaderRules.test_excerpt_must_be_verbatim_and_short) ... ok
+test_initial_phase_has_no_flags (test_validate.ReaderRules.test_initial_phase_has_no_flags) ... ok
+test_revision_answers_every_flag_and_carries_unresolved (test_validate.ReaderRules.test_revision_answers_every_flag_and_carries_unresolved) ... ok
+test_valid_initial_record (test_validate.ReaderRules.test_valid_initial_record) ... ok
+test_missing_item_targets_none_and_flag_consistency (test_validate.SkepticRules.test_missing_item_targets_none_and_flag_consistency) ... ok
+test_completeness_uncertain_follows_missing_item_flags (test_views.ViewBoundary.test_completeness_uncertain_follows_missing_item_flags) ... ok
+test_leak_report_catches_declaration_and_passage_text (test_views.ViewBoundary.test_leak_report_catches_declaration_and_passage_text) ... ok
+test_note_with_passage_text_is_replaced_by_generic_note (test_views.ViewBoundary.test_note_with_passage_text_is_replaced_by_generic_note) ... ok
+test_view_drops_declarations_spans_and_sentence_fields (test_views.ViewBoundary.test_view_drops_declarations_spans_and_sentence_fields) ... ok
+test_private_terms_replaced_whole_word_in_their_call_only (test_windows_redact.Redaction.test_private_terms_replaced_whole_word_in_their_call_only) ... ok
+test_public_passage_is_copied_unchanged (test_windows_redact.Redaction.test_public_passage_is_copied_unchanged) ... ok
+test_restricted_passage_loses_window_but_keeps_excerpts (test_windows_redact.Redaction.test_restricted_passage_loses_window_but_keeps_excerpts) ... ok
+test_ner_pass_adds_entities_when_spacy_available (test_windows_redact.WindowBuilder.test_ner_pass_adds_entities_when_spacy_available) ... skipped 'spaCy model not installed'
+test_synthetic_transcript_parsed_masked_and_numbered (test_windows_redact.WindowBuilder.test_synthetic_transcript_parsed_masked_and_numbered) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.092s
+
+OK (skipped=1)
