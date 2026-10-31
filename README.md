@@ -1,4 +1,4 @@
-# Multi-agent measurement of reported organizational norms from earnings calls
+# Multi-agent Based Measurement of Organizational Culture 
 
 Research artifact for a Stage 1 proposal to the *Organization Science* special issue
 **AI-Enabled Frontiers in Organizational Science**. Authors are anonymized for review;
